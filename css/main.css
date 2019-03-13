@@ -391,3 +391,194 @@ button:active {
 }
 
 /*gallery end*/
+
+/*Intelect Start*/
+.intelect {
+	padding: 150px 0 155px;
+}
+
+.intelect__title {
+	text-align: center;
+}
+
+.intelect__text {
+	margin: 30px 0 80px;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.intelect__cards {
+	justify-content: space-between;
+}
+
+.intelect__card {
+	width: 330px;
+	height: 162px;
+	position: relative;
+	-ms-align-items: center;
+	align-items: center;
+}
+.intelect__card::after {
+	content: '';
+	display: block;
+	position: absolute;
+	box-sizing: border-box;
+	width: 194px;
+	height: 162px;
+	border: 10px solid #e6e6e6;
+	left: 31px;
+	top: 0;
+	z-index: -1;
+}
+
+.intelect__card::before {
+	content: '';
+	display: block;
+	width: 120px;
+	height: 90px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.intelect__card_move::before {
+	
+	background: url(../img/icons-1.png) no-repeat left -30px top;
+}
+
+.intelect__card_temp::before {
+	background: url(../img/icons-1.png) no-repeat left -170px top;
+}
+
+.intelect__card_water::before {
+	background: url(../img/icons-1.png) no-repeat left -290px top;
+}
+
+.intelect__card_windows::before {
+	background: url(../img/icons-1.png) no-repeat left -430px top;
+	width: 90px;
+}
+
+.intelect__card-info {
+	padding-left: 145px;
+	font-size: 1.375rem;
+	font-family: 'Cent-BT-Bold', sans-serif;
+}
+
+/*Intelect End*/
+/*Servicess End*/
+
+.servicess {
+	padding: 170px 0 155px;
+	background: url(../img/servicess-bg.jpg) no-repeat center center;
+	background-size: cover;
+	color: #fff;
+	text-align: center;
+}
+
+.servicess__title {
+	color: #fff;
+}
+
+.servicess__subtitle {
+	margin: 30px 0 80px;
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+.servicess__cards {
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.servicess__card {
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	width: 20%;
+	height: 290px;
+	position: relative;
+}
+
+.servicess__card::before {
+		content: '';
+	display: block;
+	position: absolute;
+	background: rgba(255, 255, 255, 0);
+	transition: all 0.8s ease;
+}
+
+.servicess__card:hover::before {
+	width: 80%;
+	height: 80%;
+	left: 10%;
+	top: 10%;
+	background: rgba(255, 255, 255, 0.32);
+}
+
+.servicess__icon {
+	display: block;
+	width: 110px;
+	height: 110px;
+	margin: 40px auto 0;
+	position: relative;
+}
+
+.servicess__icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 1px;
+	height: 20px;
+	bottom: -10px;
+	left: 50%;
+	background: #fff;
+}
+
+.servicess__icon_book {
+	background: url(../img/icons-1.png) no-repeat left -515px top 10px;
+}
+
+.servicess__icon_restaurant {
+	background: url(../img/icons-1.png) no-repeat left -625px top;
+}
+
+.servicess__icon_parking {
+	background: url(../img/icons-1.png) no-repeat left -720px top;
+}
+
+.servicess__icon_train {
+	background: url(../img/icons-1.png) no-repeat left -820px top;
+	width: 97px;
+}
+
+.servicess__icon_skate {
+	background: url(../img/icons-1.png) no-repeat left -905px top 5px;
+}
+
+.servicess__icon_bike {
+	background: url(../img/icons-1.png) no-repeat left -1003px top 15px;
+}
+
+.servicess__icon_kids {
+	background: url(../img/icons-1.png) no-repeat left -1100px top;
+}
+
+.servicess__icon_park {
+	background: url(../img/icons-1.png) no-repeat left -1214px top 5px;
+}
+
+.servicess__icon_road {
+	background: url(../img/icons-1.png) no-repeat left -1340px top;
+}
+
+.servicess__icon_shops {
+	background: url(../img/icons-1.png) no-repeat left -1485px top;
+}
+
+.servicess__text {
+	font-size: 1.25rem;
+	max-width: 60%;
+	margin: 23px auto 0;
+}
+
+/*Servicess Start*/
