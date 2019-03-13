@@ -1,0 +1,30 @@
+@font-face {
+	font-family: "Cent-BT";
+	src: url("../fonts/CentSchbkCyrill-BT.ttf");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Cent-BT-Bold";
+	src: url("../fonts/CentSchbkCyrill-BT-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Cent-BT-Bold_italic";
+	src: url("../fonts/CentSchbkCyrill-BT-Bold-Italic.ttf");
+}
+
+@font-face {
+	font-family: "Cent-BT-Roman";
+	src: url("../fonts/CentSchbkCyrill-BT-Roman.ttf");
+}
+
+@font-face {
+	font-family: "MinionPro-Regular";
+	src: url("../fonts/MinionPro-Regular.otf");
+}
+
+@font-face {
+	font-family: "MuseoSansCyrl-700";
+	src: url("../fonts/MuseoSansCyrl-700.ttf");
+}
