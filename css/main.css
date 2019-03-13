@@ -392,6 +392,176 @@ button:active {
 
 /*gallery end*/
 
+/*3. manage*/
+
+.manage {
+	padding-top: 180px;
+	background: url(../img/manage-bg.png) center bottom no-repeat;
+	background-size: auto;
+}
+
+/*--get section--*/
+
+/*timer*/
+
+.manage__to-get {
+	justify-content: space-between;
+}
+
+.manage__offer {
+	flex-basis: 535px;
+	padding-right: 45px;
+}
+
+.manage__title {
+	position: relative;
+}
+
+.manage__title::before {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 95px;
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+.manage__text {
+	padding-top: 40px;
+	padding-bottom: 65px;
+	font-size: 1.75rem;
+}
+
+.manage__timer {
+	color: #f28919;
+	justify-content: space-between;
+}
+
+.timer__unit {
+	position: relative;
+	font-size: 3.875rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+	flex-basis: 74px;
+}
+
+.timer__unit::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: -2px;
+	/*bottom: -16px;*/
+	width: 30px;
+	border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.timer__unit::after {
+	position: absolute;
+	content: 'ss';
+	bottom: -10px;
+	left: 45%;
+	color: rgb(46, 46, 46);
+	font-size: 1.125rem;
+	font-family: "Cent-BT", sans-serif;
+}
+
+.timer__unit:first-child::after {
+	content: 'Дня';
+}
+
+.timer__unit:nth-child(2)::after {
+	content: 'Часа';
+}
+
+.timer__unit:nth-child(3)::after {
+	content: 'Минут';
+}
+
+.timer__unit:last-child::after {
+	content: 'Секунд';
+}
+
+/*form*/
+
+.manage__form {
+	flex-basis: 791px;
+	padding-top: 175px;
+}
+
+.small-form {
+	flex: 1 1 100%;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.small-form__input {
+	padding: 5px 0;
+	border: none;
+	border-bottom: 1px solid rgb(0, 0, 0, 0.502);
+  	opacity: 0.502;
+  	flex-basis: 255px;
+  	text-align: left;
+  	font-family: "Cent-BT-Bold", sans-serif;
+  	color: rgba(46, 46, 46, 0.502);
+  	font-size: 1.125rem;
+}
+
+/*.small-form__input_name {}*/
+
+/*.small-form__input_tel {}*/
+
+.small-form__btn {
+	padding: 16px 63px;
+}
+
+.manage__form-title {
+	margin-bottom: 38px;
+	font-size: 1.375rem;
+}
+
+/*--test section--*/
+
+.manage__test {
+	padding: 500px 245px 110px;
+	max-width: 1006px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background: url(../img/manage-test-bg.png) center bottom no-repeat;
+}
+
+/*.test__title {}*/
+
+.test__text {
+	margin-top: 28px;
+	margin-bottom: 40px;
+	font-size: 1.5rem;
+	color: rgb(46, 46, 46);
+}
+
+.test__number {
+	display: block;
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: #778596;
+	font-size: 7.5rem;
+}
+
+.test__about {
+	margin-top: 23px;
+	margin-bottom: 35px;
+	font-family: "Cent-BT-Bold", sans-serif;
+	font-size: 1.125rem;
+	color: rgba(46, 46, 46, 0.58);
+}
+
+.test__button {
+	padding: 24px 75px;
+}
+
+/*#form*/
+
+/*manage start*/
+/*manage end*/
+
 /*Intelect Start*/
 .intelect {
 	padding: 150px 0 155px;
