@@ -170,3 +170,52 @@ const photoGalleryContainer = document.querySelector('.gallery__photos');
 const photoGallery = new PhotoGallery(photoGalleryContainer, photoGalleryData);
 
 // gallery end
+
+// timer start
+
+// ############!!! at the line below you can set your destination date
+const destinationDate = '6.04.2019'; // time will be set at 00:00:00
+
+const manageTimer = function(destDate){
+
+	let destinationDate = destDate.split('.');
+	destinationDate = new Date(+destinationDate[2], +destinationDate[1] - 1, +destinationDate[0]);
+
+	let today = new Date();
+	const seconds = Math.floor((destinationDate - today) / 1000);
+
+	const minutes = Math.floor(seconds / 60),
+		hours = Math.floor(minutes / 60),
+		days =  Math.floor(hours / 24);
+	return {
+		secondsToshow: seconds % 60,
+		minutesToshow: minutes % 60,
+		hoursToshow: hours % 24,
+		daysToshow: days
+	}
+};
+
+function showTime() {
+	const date = document.querySelectorAll('.timer__unit'),
+		dd = date[0],
+		hh = date[1],
+		mm = date[2],
+		ss = date[3];
+
+	setInterval(() => {
+		const {
+				secondsToshow: sec,
+				minutesToshow: min,
+				hoursToshow: hour,
+				daysToshow: day
+			} = manageTimer(destinationDate);
+		
+		dd.innerText = (day < 10) ? `0${day}` : day;
+		hh.innerText = (hour < 10) ? `0${hour}` : hour;
+		mm.innerText = (min < 10) ? `0${min}` : min;
+		ss.innerText = (sec < 10) ? `0${sec}` : sec;
+	}, 1000)
+}
+showTime();
+
+// timer end
