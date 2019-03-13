@@ -2,6 +2,9 @@
 
 /*1. header*/
 /*2. gallery*/
+/*3. manage*/
+/*4. intelect*/
+/*5. servicess*/
 
 /*--fonts--*/
 /*
@@ -396,7 +399,7 @@ button:active {
 
 .manage {
 	padding-top: 180px;
-	background: url(../img/manage-bg.png) center bottom no-repeat;
+	background: url(../img/manage-bg.jpg) center bottom no-repeat;
 	background-size: auto;
 }
 
@@ -562,6 +565,8 @@ button:active {
 /*manage start*/
 /*manage end*/
 
+/*4. intelect*/
+
 /*Intelect Start*/
 .intelect {
 	padding: 150px 0 155px;
@@ -637,7 +642,10 @@ button:active {
 }
 
 /*Intelect End*/
-/*Servicess End*/
+
+/*5. servicess*/
+
+/*Servicess start*/
 
 .servicess {
 	padding: 170px 0 155px;
@@ -751,4 +759,4 @@ button:active {
 	margin: 23px auto 0;
 }
 
-/*Servicess Start*/
+/*Servicess end*/
