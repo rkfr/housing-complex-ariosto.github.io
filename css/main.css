@@ -758,12 +758,52 @@ button:active {
 	max-width: 60%;
 	margin: 23px auto 0;
 }
-
 /*Servicess end*/
 
+/*excursion*/
+/*get-demo start*/
+
+.get-demo {
+	background: url(../img/get-demo-bg.jpg) center center no-repeat;
+	background-size: cover;
+	opacity: 0.961;
+	box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.2);
+}
+
+.get-demo__content {
+	width: 100%;
+	max-width: 800px;
+	padding: 350px 200px 96px 70px;
+	background: url(../img/manage-test-bg.png) center bottom no-repeat;
+}
+
+.get-demo__title {
+	position: relative;
+}
+
+.get-demo__title::before {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 95px;
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+.get-demo__text {
+	margin-top: 37px;
+	margin-bottom: 47px;
+	font-size: 1.75rem;
+	color: rgb(46, 46, 46);
+}
+
+.get-demo__button {
+	padding: 22px 38px;
+}
+
+/*get-demo end*/
 
 /*layout-option*/
-
 /*layout-option start*/
 
 .layout-option {
@@ -878,3 +918,127 @@ button:active {
 }
 
 /*layout-option end*/
+
+/*Excursion*/
+
+/*excursion start*/
+
+.excursion {
+	padding-top: 150px;
+	background: url(../img/excursion-bg.jpg) center 400px no-repeat;
+	background-size: auto;
+}
+
+/*--get section--*/
+
+/*timer*/
+
+.excursion__to-get {
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.excursion__offer {
+	flex-basis: 535px;
+	padding-right: 45px;
+}
+
+.excursion__title {
+	position: relative;
+}
+
+.excursion__title::before {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	width: 95px;
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+.excursion__text {
+	padding-top: 40px;
+	padding-bottom: 0;
+	font-size: 1.125rem;
+}
+
+/*form*/
+
+.excursion__form {
+	flex-basis: 791px;
+	padding-top: 175px;
+}
+
+.small-form {
+	flex: 1 1 100%;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.small-form__input {
+	padding: 5px 0;
+	border: none;
+	border-bottom: 1px solid rgb(0, 0, 0, 0.502);
+  	opacity: 0.502;
+  	flex-basis: 255px;
+  	text-align: left;
+  	font-family: "Cent-BT-Bold", sans-serif;
+  	color: rgba(46, 46, 46, 0.502);
+  	font-size: 1.125rem;
+}
+
+/*.small-form__input_name {}*/
+
+/*.small-form__input_tel {}*/
+
+.small-form__btn {
+	padding: 17px 20px;
+}
+
+.excursion__form-title {
+	margin-bottom: 38px;
+	font-size: 1.375rem;
+}
+
+/*--test section--*/
+
+.excursion__test {
+	padding: 500px 245px 110px;
+	max-width: 1006px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background: url(../img/manage-test-bg.png) center bottom no-repeat;
+}
+
+/*.test__title {}*/
+
+.test__text {
+	margin-top: 28px;
+	margin-bottom: 40px;
+	font-size: 1.5rem;
+	color: rgb(46, 46, 46);
+}
+
+.test__number {
+	display: block;
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: rgb(46, 46, 46);
+	font-size: 7.5rem;
+}
+
+.test__about {
+	margin-top: 23px;
+	margin-bottom: 35px;
+	font-family: "Cent-BT-Bold", sans-serif;
+	font-size: 1.125rem;
+	color: #676f73;
+}
+
+.test__button {
+	padding: 24px 75px;
+}
+
+/*#form*/
+
+/*excursion end*/
