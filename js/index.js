@@ -1,5 +1,51 @@
 'use strict'
 
+// ***practical dom lib
+
+class ElementsConstructor {
+	constructor(){}
+
+	create(tag, classList, ...attributes) {
+		const element = document.createElement(tag);
+
+		(classList && 
+			(element.className = classList)
+		);
+
+		(arguments.length > 2 && (
+			attributes.forEach(obj => {
+				for(let attr in obj) {
+					element.setAttribute(attr, obj[attr])
+				}
+			})
+		));
+		
+		return element;
+	}
+
+	get(selector) {
+		const element = document.querySelector(selector);
+		return element;
+	}
+
+	getAll(selector) {
+		const elements = document.querySelectorAll(selector);
+		return elements;
+	}
+
+	setStyle(element, ...style) {
+		if (arguments.length < 2)
+			element.style = '';
+
+		style.forEach(obj => {
+			for(let spec in obj) {
+				element.style[spec] = obj[spec];
+			}
+		});
+	}
+}
+
+
 // gallery start
 
 const photoGalleryData = [
@@ -219,3 +265,315 @@ function showTime() {
 showTime();
 
 // timer end
+
+// start options script
+
+const flatsData = [
+	{
+		flatId: 0,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+				},
+				title: 'С сауной',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+				},
+				title: '2 санузла',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+				},
+				title: 'С Терасой',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+				},
+				title: 'Кабинет',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	},
+	{
+		flatId: 1,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+				},
+				title: 'С сауной 2-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+				},
+				title: '2 санузла 2-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+				},
+				title: 'С Терасой 2-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+				},
+				title: 'Кабинет 2-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	},
+	{
+		flatId: 2,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+				},
+				title: 'С сауной 2-room-euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+				},
+				title: '2 санузла 2-room-euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+				},
+				title: 'С Терасой 2-room-euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+				},
+				title: 'Кабинет 2-room-euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	},
+	{
+		flatId: 3,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'img/room-example.jpg'
+				},
+				title: 'С сауной 3-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'img/room-example.jpg'
+				},
+				title: '2 санузла 3-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'img/room-example.jpg'
+				},
+				title: 'С Терасой 3-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'img/room-example.jpg'
+				},
+				title: 'Кабинет 3-room',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	},
+	{
+		flatId: 4,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
+				},
+				title: 'С сауной 3-room euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
+				},
+				title: '2 санузла 3-room euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
+				},
+				title: 'С Терасой 3-room euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
+				},
+				title: 'Кабинет 3-room euro',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	},
+	{
+		flatId: 5,
+		flatData: [
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
+				},
+				title: 'С сауной studio',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
+				},
+				title: '2 санузла studio',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
+				},
+				title: 'С Терасой studio',
+				subtitle: 'от 40 м<sup>2</sup>'
+			},
+			{
+				image: {
+					alt: 'flat',
+					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
+				},
+				title: 'Кабинет studio',
+				subtitle: 'от 40 м<sup>2</sup>'
+			}
+		]
+	}
+];
+
+const $ = new ElementsConstructor();
+
+class RoomOptions {
+	constructor(container, data) {
+		this.props = {
+			data: [...data],
+			container: container,
+			checkedFlatId: 3
+		}
+
+		this.renderCards();
+		this.changeCardsHandler();
+	}
+
+	renderCards() {
+		const {container, data, checkedFlatId} = this.props,
+			currentCardsList = data[checkedFlatId].flatData;
+
+		container.innerText = '';
+
+		currentCardsList.forEach(cardData => {
+			container.append(this.renderCard(cardData));
+		});
+	}
+
+	renderCard(data) {
+		const card = $.create('div', 'flat-cards__card'),
+			cardImage = $.create('img', 'flat-cards__image', data.image),
+			title = $.create('h3', 'flat-cards__title'),
+			subtitle = $.create('p', 'flat-cards__info'),
+			form = $.create('form', 'flat-cards__form js-form',
+				{
+					'data-id': 'popupResult',
+					'action': 'success.php'
+				}),
+			label = $.create('label'),
+			input = $.create('input', 'flat-cards__get-number', 
+				{
+					'type': 'text',
+					'name': 'name',
+					'placeholder': 'Введите номер',
+					'required': true
+				}),
+			button = $.create('button', 'flat-cards__button btn', {'data-submit': ''});
+
+		title.innerText = data.title;
+		subtitle.innerHTML = data.subtitle;
+		button.innerText = 'Узнать подробнее';
+
+		label.append(input);
+		form.append(label);
+		card.append(cardImage, title, subtitle, form, button);
+
+		return card;
+	}
+
+	changeCardsHandler() {
+		const buttons = $.getAll('.flats-preview__item'),
+			buttonsContainer = $.get('.flats-preview__list');
+
+		buttonsContainer.addEventListener('click', e => {
+			const {target} = e,
+				{flatId: id} = target.dataset;
+
+			if (target.tagName !== 'LI') return;
+
+			for (let button of buttons) {
+				if (button.classList.contains('flats-preview__checked')){
+					button.classList.remove('flats-preview__checked');
+				}
+			}
+
+			target.classList.add('flats-preview__checked');
+			this.props.checkedFlatId = +id;
+			this.renderCards();
+		});
+	}
+}
+
+const roomCardsContainer = $.get('.flats-preview__flat-cards');
+
+const roomCards = new RoomOptions(roomCardsContainer, flatsData);
+
+// end options script

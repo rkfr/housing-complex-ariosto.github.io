@@ -760,3 +760,121 @@ button:active {
 }
 
 /*Servicess end*/
+
+
+/*layout-option*/
+
+/*layout-option start*/
+
+.layout-option {
+	padding-top: 150px;
+	/*background: #fcfcfc;*/
+	text-align: center;
+}
+
+/*.layout-option__title {}*/
+
+.layout-option__subtitle {
+	margin-top: 28px;
+	margin-bottom: 85px;
+	color: rgb(46, 46, 46);
+	font-size: 1.5rem;
+}
+
+/*.layout-option__flats-preview {}*/
+
+.flats-preview__list {
+	padding: 0 22px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 54px 0px rgba(0, 0, 0, 0.06);
+	flex-basis: 1136px;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 65px;
+	position: relative;
+}
+
+.flats-preview__item {
+	padding: 20px 8px;
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: rgb(46, 46, 46);
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+
+.flats-preview__checked {
+	border-top: 4px solid rgb(242, 137, 25);
+	border-bottom: 4px solid rgb(242, 137, 25);
+}
+
+.flats-preview__list,
+.flats-preview__item,
+.flats-preview__checked {
+	/*transition: .5s;*/
+}
+
+/*cards*/
+
+/*.flats-preview__flat-cards {}*/
+
+.flat-cards__card {
+	padding: 45px 30px 60px 30px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 46px 0px rgba(0, 0, 1, 0.09);
+}
+
+.flat-cards__card:not(:last-child) {
+	margin-right: 18px;
+}
+
+.flat-cards__image {
+	display: block;
+	max-width: 297px;
+	width: 100%;
+	height: 100%;
+	max-height: 247px;
+	margin-bottom: 55px;
+}
+
+.flat-cards__title {
+	font-size: 1.5rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: rgb(46, 46, 46);
+	text-transform: uppercase;
+}
+
+.flat-cards__info {
+	margin-top: 30px;	
+	margin-bottom: 36px;
+	font-size: 1.5rem;
+	color: rgb(46, 46, 46);
+}
+
+.flat-cards__form,
+.flat-cards__get-number {
+	display: block;
+	width: 100%;
+}
+
+.flat-cards__form {
+	padding: 0 22px;
+}
+
+.flat-cards__get-number {
+	padding: 3px 0;
+	border: none;
+	border-bottom: 1px solid rgb(46, 46, 46, 0.502);
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: rgba(46, 46, 46, 0.502);
+	font-size: 1.120rem;
+}
+
+/*.flat-cards__get-number {}*/
+
+.flat-cards__button {
+	margin-top: 27px;
+	padding: 16px 36px;
+	cursor: pointer;
+}
+
+/*layout-option end*/
