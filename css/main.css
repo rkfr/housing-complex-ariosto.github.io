@@ -1199,6 +1199,199 @@ button:active {
 	padding: 24px 75px;
 }
 
-/*#form*/
-
 /*excursion end*/
+
+/*x. flats design*/
+
+/*flats design start*/
+
+.flats-design {
+	padding-top: 160px;
+	padding-bottom: 155px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.flats-design::before,
+.flats-design::after {
+	content: '';
+	position: absolute;
+}
+
+.flats-design::before {
+	top: 0;
+	right: 22.5%;
+	width: 164px;
+  	height: 363px;
+  	background: url(../img/flats-design-lamp.png) center center no-repeat;
+  	background-size: cover;
+}
+
+.flats-design::after {
+	bottom: 90px;
+	right: 4.48%;
+	height: 379px;
+	width: 353px;
+	background: url(../img/flats-design-chair.png) center center no-repeat;
+	background-size: 100%;
+}
+
+
+
+.flats-design__title {}
+
+.flats-design__subtitle {
+	margin-top: 28px;
+	margin-bottom: 76px;
+	color: rgb(46, 46, 46);
+	font-size: 1.5rem;
+}
+
+.flats-design__content {
+	align-items: center;
+}
+
+.flats-design__preview {
+	flex-basis: 853px;
+}
+
+/*large blocks*/
+
+.flats-design__preview-area {
+	padding-top: 70px;
+}
+
+.flats-design__preview-area:not(:last-child) {
+	margin-bottom: 27px;
+}
+
+.flats-design__preview-area_sauna {
+	width: 90%;
+	background: url(../img/flats-design-1.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.flats-design__preview-area_terrace {
+	width: 80%;
+	background: url(../img/flats-design-2.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.flats-design__preview-area_rooms {
+	width: 100%;
+	background: url(../img/flats-design-3.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+/*inner blocks*/
+
+.preview-area__text-wrapper {
+	word-wrap: break-word;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.preview-area__text-wrapper_sauna {
+	width: 75%;
+	background: url(../img/flats-design-1-mask.png) center center no-repeat;
+	background-size: cover;
+}
+
+.preview-area__text-wrapper_terrace {
+	width: 73%;
+	background: url(../img/flats-design-2-mask.png) center center no-repeat;
+	background-size: cover;
+}
+
+.preview-area__text-wrapper_rooms {
+	width: 82.3%;
+	background: url(../img/flats-design-3-mask.png) center center no-repeat;
+	background-size: cover;
+}
+
+/*text*/
+
+.preview-area__title {
+	color: rgb(255, 254, 254);
+	font-size: 1.375rem;
+	font-family: "Cent-BT-Roman", sans-serif;
+	font-weight: 500;
+	position: relative;
+	text-align: left;
+}
+
+.preview-area__title::after {
+	content: '';
+	position: absolute;
+	border-bottom: 1px solid rgb(255, 255, 255);
+	width: 65px;
+	left: 0;
+	bottom: -14px;
+}
+
+.preview-area__title_sauna {
+	margin-left: 42%;
+}
+
+.preview-area__title_terrace {
+	margin-left: 48.6%;
+}
+
+.preview-area__title_rooms {
+	margin-left: 34.76%;
+}
+
+/*form*/
+
+.flats-design__form-wrapper {
+	margin-left: 9%;
+	flex-basis: 443px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 32px 0px rgba(0, 0, 1, 0.16);
+	position: relative;
+	z-index: 1;
+}
+
+.flats-design__flats-form {
+	width: 100%;
+	display: block;
+	padding: 60px 50px 63px 50px;
+}
+
+.flats-form__title {
+	margin-bottom: 32px;
+}
+
+.flats-form__input {
+	display: block;
+	width: 100%;
+	border: none;
+	padding: 6px 0;
+	border-bottom: 1px solid rgb(46, 46, 46, 0.502);
+	color: rgba(46, 46, 46, 0.502);
+	font-size: 1rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+}
+
+.flats-form__input_get-number {
+	margin-top: 44px;
+	margin-bottom: 60px;
+}
+
+.flats-form__secure-info {
+	display: block;
+	color: rgba(46, 46, 46, 0.341);
+	font-size: 1em;
+}
+
+.flats-form__button {
+	margin-bottom: 32px;
+	padding: 19px 55px;
+	font-size: 1rem;
+}
+
+/*flats design end*/
