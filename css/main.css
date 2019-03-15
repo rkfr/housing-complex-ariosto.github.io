@@ -860,6 +860,66 @@ button:active {
 }
 /*Servicess end*/
 
+/*x. conditions*/
+
+/*conditions start*/
+
+.conditions {
+	padding: 150px 0 155px;
+	text-align: center;
+}
+
+.conditions__text {
+	margin: 30px 0 80px;
+	font-size: 1.5rem;
+}
+
+.conditions__cards {
+	justify-content: space-between;
+}
+
+.conditions__card {
+	max-width: 300px;
+	min-height: 140px;
+	-ms-align-items: center;
+	align-items: center;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	letter-spacing: 0.06em;
+}
+
+.conditions__card-name {
+	font-size: 1.875rem;
+	font-family: 'Cent-BT-Bold', sans-serif;
+}
+
+.conditions__card-name::after {
+	content: '';
+	display: block;
+	margin: 20px auto 17px;
+	width: 78px;
+	height: 2px;
+	background: #f79472;
+	opacity: 0.51;
+}
+
+.conditions__card-text {
+	max-width: 80%;
+}
+
+.conditions__btn {
+	font-family: 'Cent-BT-Bold_italic', sans-serif;
+	letter-spacing: 0.06em;
+	color: #f46d3f;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+/*conditions end*/
+
 /*excursion*/
 /*get-demo start*/
 
