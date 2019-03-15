@@ -1460,3 +1460,76 @@ button:active {
 }
 
 /*mortage end*/
+
+/*x. map*/
+
+/*map start*/
+
+.map {
+	padding-top: 810px;
+	background: url(../img/map-bg.jpg) no-repeat left top;
+	background-size: cover;
+	position: relative;
+}
+
+.map-info {
+	position: absolute;
+	width: 100%;
+	max-width: 548px;
+	padding: 42px 42px 17px; 42px;
+	background: #fff;
+	right: 15%;
+	top: 50%;
+	transform: translateY(-50%);
+	box-shadow: 0px 0px 54px 0px rgba(0, 0, 0, 0.17);
+}
+
+.map__title {
+	-ms-align-items: center;
+	align-items: center;
+	margin-bottom: 21px;
+}
+
+.map__title::before {
+	content: '';
+	display: block;
+	width: 84px;
+	height: 107px;
+	margin-right: 23px;
+	background: url(../img/map-icons-1.png) no-repeat left top;
+}
+
+.map__item {
+	-ms-align-items: center;
+	align-items: center;
+	padding-left: 21px;
+	font-size: 1.375rem;
+	font-family: 'Cent-BT-Roman', sans-serif;
+	margin-bottom: 38px;
+}
+
+.map__item::before {
+	content: '';
+	display: block;
+	width: 47px;
+	height: 63px;
+	margin-right: 41px;
+}
+
+.map__item_schools::before {
+	background: url(../img/map-icons-1.png) no-repeat left -116px top;
+}
+
+.map__item_shops::before {
+	background: url(../img/map-icons-1.png) no-repeat left -188px top;
+}
+
+.map__item_kids::before {
+	background: url(../img/map-icons-1.png) no-repeat left -270px top;
+}
+
+.map__item_hospital::before {
+	background: url(../img/map-icons-1.png) no-repeat left -342px top;
+}
+
+/*map end*/
