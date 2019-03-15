@@ -577,3 +577,368 @@ const roomCardsContainer = $.get('.flats-preview__flat-cards');
 const roomCards = new RoomOptions(roomCardsContainer, flatsData);
 
 // end options script
+
+// start Quiz
+
+class Quiz {
+	constructor(container, data) {
+		this.props = {
+			form: {...data.form},
+			questions: [...data.questions],
+			container: container,
+			result: [],
+			currentAnswer: '',
+			currentQuestionId: 0
+		}
+	}
+
+	startQuiz(startButton) {
+		startButton.addEventListener('click', () => {
+			this.renderQuiz();
+		});
+	}
+
+	formateResult() {
+		const {result} = this.props;
+		let formated = '';
+
+		result.forEach(str => {
+			for (let data in str) {
+				formated += `${data} ${str[data]} <br>`;
+			}
+		});
+		return formated;
+	}
+
+	renderQuiz() {
+		const {questions, container, currentQuestionId: id} = this.props,
+			currentQuestionCard = questions[id],
+			{answers} = currentQuestionCard;
+
+		$.setStyle(container, {
+			'padding': '500px 84px 90px 130px',
+			'position': 'relative'
+		});
+
+		const title = $.create('h3', 'quiz__question'),
+			answersWrapper = $.create('div', 'quiz__answers'),
+			buttons = $.create('div', 'quiz__buttons'),
+			nextButton = $.create('button', 'quiz__button quiz__buttom_next btn'),
+			prevButton = $.create('button', 'quiz__button quiz__buttom_prev btn'),
+			questionNumber = $.create('span', 'quiz__question-number');
+
+		answers.forEach(answer => {
+			answersWrapper.append(this.renderAnswer(answer));
+		});
+
+		questionNumber.innerText = id + 1;
+
+		title.innerText = currentQuestionCard.question;
+		nextButton.innerText = 'Далее';
+		prevButton.innerText = 'Назад';
+
+		container.innerText = '';
+		buttons.append(prevButton, nextButton)
+		container.append(title, answersWrapper, buttons, questionNumber);
+
+		this.setCheckedByDefault();
+		this.quizHandler();
+	}
+
+	setCheckedByDefault() {
+		$.get('.quiz__answer-input').setAttribute('checked', true);
+	}
+
+	renderAnswer(data) {
+		const input = $.create('input', 'quiz__answer-input', {
+			'type': 'radio',
+			'value': data,
+			'name': 'quiz-answer'
+		}),
+		wrapper = $.create('label', 'quiz__answer');
+
+		wrapper.innerText = data;
+		wrapper.append(input);
+		return wrapper;
+	}
+
+	quizHandler() {
+		const {questions, result} = this.props,
+			nextButton = $.get('.quiz__buttom_next'),
+			prevButton = $.get('.quiz__buttom_prev'),
+			currentQuestion = $.get('.quiz__question').innerText;
+
+		this.checkAnswerHandler();
+
+		prevButton.addEventListener('click', () => {
+			this.props.currentQuestionId -= 1;
+			if (this.props.currentQuestionId < 0)
+				this.props.currentQuestionId = 0;
+			this.renderQuiz();
+			result.splice(result.length - 1, 1);
+			console.log(this.props.result);
+		});
+
+		nextButton.addEventListener('click', () => {
+			this.props.currentQuestionId += 1;
+			if (this.props.currentQuestionId > questions.length - 1) {
+				this.renderForm();
+				result.push({[currentQuestion]: this.props.currentAnswer});
+				return;
+			}
+			this.renderQuiz();
+			result.push({[currentQuestion]: this.props.currentAnswer});
+			console.log(this.props.result);
+		});
+
+	}
+
+	checkAnswerHandler() {
+
+		const answers = $.getAll('.quiz__answer-input');
+
+		for (let answer of answers) {
+			answer.addEventListener('change', e => {
+				const {value} = e.target;
+				this.props.currentAnswer = value;
+			});
+		}
+	}
+
+	renderForm() {
+		const {form, container} = this.props,
+			title = $.get('.quiz__question'),
+			body = $.get('.quiz__answers'),
+			button = $.get('.quiz__buttom_next');
+
+		title.innerText = form.title;
+		button.innerText = 'Отправить';
+		body.innerText = '';
+
+		const subtitle = $.create('p', 'quiz__form--form__subtitle'),
+			formToSend = $.create('form', 'quiz__form--form js-form', {
+				mhetod: 'POST',
+				action: 'success.php',
+				'data-id': 'popupResult'
+			}),
+			label = $.create('label', 'quiz__form--form__label'),
+			input = $.create('input', 'quiz__form--form__input', {
+				type: 'text',
+				name: 'quiz-form-number',
+				placeholder: 'Введите свой телефон'
+			}),
+			hiddenLabel = $.create('label', 'quiz__form--form__label_hidden'),
+			hiddenInput = $.create('input', 'quiz__form--form__input_hidden', {
+				type: 'text',
+				name: 'quiz-form-number_hidden'
+			});
+
+		$.setStyle(title, {
+			marginBottom: '16px'
+		});
+
+		container.insertBefore(subtitle, body);
+		subtitle.innerText = form.subtitle;
+		hiddenInput.value = this.formateResult();
+		hiddenLabel.append(hiddenInput);
+		label.append(input);
+		formToSend.append(label, hiddenLabel);
+		body.append(formToSend);
+
+		const quizNumber = $.get('.quiz__question-number');
+		quizNumber.innerText = +quizNumber.innerText + 1;
+		
+		setTimeout(() => {
+			this.renderThanks();
+		}, 500)
+		
+	}
+
+	renderThanks() {
+		const {container} = this.props,
+			title = $.create('h3', 'quiz__thanks--thanks__title'),
+			subtitle = $.create('p', 'quiz__thanks--thanks__subtitle'),
+			button = $.get('.quiz__buttom_next');
+
+		(button && button.addEventListener('click', () => {
+			title.innerText = 'Спасибо, что прошли тест!'
+			subtitle.innerText = 'Мы уже начали работу и наш менеджер свяжется с вами в ближайшее время';
+			container.innerText = '';
+			container.append(title, subtitle);
+		}));	
+	}
+}
+
+// end Quiz
+
+// start manage quiz
+
+const manageQuizData = {
+	questions: 
+	[
+		{
+			id: 0,
+			question: 'С какой целью вы планируете приобрести квартиру?',
+			answers: [
+				'Для проживания',
+				'Для инвестиций',
+				'Детям (на будущее)',
+				'Не определился'
+			]
+		},
+		{
+			id: 1,
+			question: 'Какое количество комнат вам необходимо',
+			answers: [
+				'1-комнатная',
+				'2-комнатная',
+				'3-комнатная',
+				'Евро 2-комнатная',
+				'Евро 3-комнатная',
+				'Больше 3х комнат'
+			]
+		},
+		{
+			id: 2,
+			question: 'Какая форма оплаты вам будет удобна?',
+			answers: [
+				'Удиновременная оплата',
+				'Рассрочка',
+				'Ипотека',
+				'Субсидия',
+				'Не определился'
+			]
+		},
+		{
+			id: 3,
+			question: 'Вы хотели бы встречать рассвет или провожать закат?',
+			answers: [
+				'Рассвет',
+				'Закат'
+			]
+		},
+		{
+			id: 4,
+			question: 'Выберите тип отделки?',
+			answers: [
+				'Без отделки',
+				'Подготовка под отделку',
+				'Чистовая'
+			]
+		},
+		{
+			id: 5,
+			question: 'Когда вы планируете отделку?',
+			answers: [
+				'В ближайшее время',
+				'Через 6-8 месяцев',
+				'Не раньше, чем через год',
+				'Не определился',
+				'Сразу, если квартира понравится'
+			]
+		},
+		{
+			id: 6,
+			question: 'Какие дополнительные параметры для вас важны?',
+			answers: [
+				'Гардеробная или кладовая',
+				'Кухня-гостиная',
+				'Прачечная',
+				'Широкий балкон',
+				'Обеденная зона',
+				'Не определился'
+			]
+		},
+		{
+			id: 7,
+			question: 'Рассчитываете ли вы на определенный ценовой сегмент?',
+			answers: [
+				'До 6 млн. Р',
+				'От 7 млн. Р до 9 млн. Р',
+				'От 9 млн. Р до 11 млн. Р',
+				'Не определился'
+			]
+		}
+	],
+	form: {
+		id: 8,
+		title: 'Отлично! Остался последний шаг!',
+		subtitle: 'Укажите ваш номер телефона и мы сообщим вам результаты теста.'
+	}
+}
+
+const manageQuizContainer = $.get('.manage__test'),
+	manageQuiz = new Quiz(manageQuizContainer, manageQuizData);
+manageQuiz.startQuiz($.get('.start-manage-quiz'));
+
+// end manage quiz
+
+// start excursion quiz
+
+const excursionQuizData =
+{
+	questions: 
+	[
+		{
+			id: 0,
+			question: 'Работаете ли вы официально?',
+			answers: [
+				'Да, работаю официально и белая зарплата',
+				'Да, но большая часть зарплаты серая',
+				'Работаю, но не официально',
+				'Я моряк (военный)',
+				'Пенсионер',
+				'У меня своя компания (юридическое лицо или ИП)',
+				'Не работаю'
+			]
+		},
+		{
+			id: 1,
+			question: 'Как долго вы работаете на последнем месте?',
+			answers: [
+				'От 1 года',
+				'От 1 года до 5 лет',
+				'Свыше 5 лет'
+			]
+		},
+		{
+			id: 2,
+			question: 'Какой первый взнос вы хотите сделать (в % от стоимости квартиры)',
+			answers: [
+				'От 0% до 20%',
+				'От 20% до 50%',
+				'От 50%'
+			]
+		},
+		{
+			id: 3,
+			question: 'На какой срок вы хотели бы взять ипотеку?',
+			answers: [
+				'До 5 лет',
+				'5 - 10 лет',
+				'10 - 15 лет',
+				'От 15 лет'
+			]
+		},
+		{
+			id: 4,
+			question: 'Какой ежемесячный платеж был бы вам комфортен?',
+			answers: [
+				'До 40 000р',
+				'От 40 000р до 50 000р',
+				'От 50 000р'
+			]
+		},
+	],
+	form: {
+		id: 5,
+		title: 'Отлично! Остался последний шаг!',
+		subtitle: 'Укажите ваш номер телефона и мы сообщим вам результаты теста.'
+	}
+};
+
+const excursionQuizContainer = $.get('.excursion__test'),
+	excursionQuiz = new Quiz(excursionQuizContainer, excursionQuizData);
+excursionQuiz.startQuiz($.get('.start-esxursion-test'));
+
+// end excursion quiz

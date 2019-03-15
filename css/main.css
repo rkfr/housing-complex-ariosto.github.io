@@ -165,9 +165,109 @@ button:active {
 }
 
 
+/*0. quiz*/
+
+/*quiz start*/
+
+.quiz__question {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.quiz__form--form__subtitle {
+	color: rgb(46, 46, 46);
+	text-transform: uppercase;
+}
+
+.quiz__answers {
+	margin-top: 80px;
+	margin-bottom: 90px;
+}
+
+.quiz__answer,
+.quiz__answer-input {
+	display: block;
+	/*text-align: left;*/
+}
+
+.quiz__answer {
+	position: relative;
+	text-align: left;
+	padding-left: 30px;
+	color: rgb(46, 46, 46);
+	font-size: 1.25rem;
+}
+
+.quiz__answer:not(:last-child) {
+	padding-bottom: 29px;
+}
+
+.quiz__answer-input {
+	position: absolute;
+	top: 10%;
+	left: 0;
+}
+
+.quiz__button {
+	padding: 18px 78px;
+}
+
+.quiz__buttom_prev {
+	margin-right: 22px;
+}
+
+.quiz__form--form__label_hidden {
+	visibility: hidden;
+	position: absolute;
+	overflow: hidden;
+}
+
+.quiz__form--form__subtitle {
+	max-width: 460px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.quiz__form--form__input_hidden {
+	left: 9999px;
+	position: absolute;
+}
+
+.quiz__form--form__input {
+	border: none;
+	width: 74.5%;
+	color: rgba(46, 46, 46, 0.502);
+	padding: 9px 0;
+	border-bottom: 1px solid rgba(46, 46, 46, 0.502);
+	background: transparent;
+}
+
+.quiz__thanks--thanks__title {
+	margin-bottom: 75px;
+}
+
+.quiz__thanks--thanks__subtitle {
+	width: 100%;
+	max-width: 290px;
+	margin: 0 auto;
+	color: rgb(46, 46, 46);
+	font-size: 1.25rem;
+}
+
+.quiz__question-number {
+	position: absolute;
+	right: 80px;
+	bottom: 32%;
+	font-size: 4.875rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+	color: rgba(46, 46, 46, 0.329);
+}
+
+/*quiz end*/
+
 /*1. header*/
 
-/*Header End*/
+/*Header start*/
 
 .header {
 	padding-top: 42px;
