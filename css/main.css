@@ -1533,3 +1533,40 @@ button:active {
 }
 
 /*map end*/
+
+/*x. footer*/
+
+/*footer start*/
+
+.footer {
+	padding: 68px 0 82px;
+}
+
+.footer__wrap {
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer__logo {
+	width: 91px;
+	height: 45px;
+	background: url(../img/logo.png) no-repeat center center;
+	background-size: cover;
+	margin-right: 43px;
+}
+
+.footer__text {
+	font-size: 0.875rem;
+	max-width: 450px;
+	margin-right: auto;
+	opacity: 0.77;
+	line-height: 1.3em;
+}
+
+.footer__tel {
+	font-size: 1.374rem;
+	color: #f28919;
+}
+
+/*footer end*/
