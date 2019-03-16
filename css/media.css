@@ -1,0 +1,782 @@
+@media screen and (max-width: 1500px) {
+	.container {
+		max-width: 1170px;
+	}
+	/*header*/
+	.header {
+		position: relative;
+	}
+	.menu {
+	display: none;
+    position: absolute;
+    text-align: right;
+    top: 160px;
+    right: 0;
+    width: 100%;
+    max-width: 395px;
+    background: rgb(255, 255, 255, 0.87);
+    padding: 35px 90px 35px 0;
+	}
+	.mobile-menu {
+		display: block;
+	}
+	.menu__item {
+		margin: 0 0 30px;
+	}
+	.menu-active {
+		display: block;
+	}
+	.header__links {
+		margin-left: auto;
+	}
+	.header__offer {
+	    margin: 44px 0 0 0;
+	}
+	/*mortage*/
+	.mortage__content {
+		margin-left: 0;
+	}
+	/*manage*/
+	.manage__form {
+		margin-left: 20px;
+	}
+
+	.small-form__btn  {
+		padding: 16px 23px;
+	}
+
+	/*flats-design*/
+	.layout-options__container {
+		max-width: 98%;
+	}
+
+	.flat-cards__title,
+	.flat-cards__info,
+	.flat-cards__get-number,
+	.flat-cards__button {
+		font-size: 1.2rem;
+	}
+
+	.flat-cards__button {
+		padding: 14px 20px;
+		bottom: 25px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.container {
+		max-width: 960px;
+	}
+	/*gallery*/
+	.gallery__button {
+		width: 19px;
+		height: 10px;
+		background-size: 2800%;
+		background-position: right -8%;
+		top: 65%;
+	}
+
+	.gallery__photo-item {
+		width: 132px;
+		height: 82px;
+	}
+	/*manage*/
+	.manage__to-get {
+		display: block;
+	}
+
+	.manage__offer {
+		max-width: 61.13%;
+	}
+
+	.manage__form {
+		max-width: 69.37%;
+		padding-top: 47px;
+	}
+
+	.small-form {
+		flex-wrap: wrap;
+	}
+
+	.form__label {
+		width: 49%;
+	}
+
+	.small-form__btn {
+	    padding: 16px 63px;
+	    margin-top: 37px;
+	}
+	/*intelect*/
+	.intelect__cards {
+		flex-wrap: wrap;
+	}
+	.intelect__card {
+		margin-bottom: 40px;
+	}
+	/*servicess*/
+	.servicess__cards {
+		justify-content: center;
+	}
+	.servicess__card {
+		width: 100%;
+		max-width: 350px;
+	}
+	/*excursion*/
+	.excursion__to-get {
+		display: block;
+	}
+
+	.excursion__offer {
+		max-width: 61.13%;
+	}
+
+	.excursion__form {
+		max-width: 69.37%;
+		padding-top: 47px;
+	}
+
+	.small-form {
+		flex-wrap: wrap;
+	}
+
+	.form__label {
+		width: 49%;
+	}
+
+	.small-form__btn {
+	    padding: 16px 63px;
+	    margin-top: 37px;
+	}
+	/*flats*/
+	.flats-preview__flat-cards {
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.flat-cards__card-wrapper {
+		flex-basis: 350px;
+	}
+
+	.flat-cards__card {
+		width: 100%;
+	}
+
+	.flat-cards__get-number {
+		margin-bottom: 60px;
+	}
+
+	.flats-preview__list {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+	/*flats-design*/
+	.flats-design {
+		overflow: hidden;
+		padding-bottom: 130px;
+		padding-top: 122px;
+	}
+	
+	.flats-design::before {
+		right: -5%;
+	}
+
+	.flats-design::after {
+		display: none;
+	}
+
+	.flats-design__title,
+	.flats-design__subtitle {
+		position: relative;
+		z-index: 1;
+	}
+
+	.flats-design__content {
+		display: block;
+	}
+
+	.flats-design__preview {
+		width: 65.45%;
+	}
+
+	.flats-design__form-wrapper {
+		margin: 0;
+		margin-top: 50px;
+		box-shadow: none;
+	}
+
+	.flats-design__flats-form {
+		width: 57.6%;
+		margin: 0 auto;
+		box-shadow: 0px 0px 32px 0px rgba(0, 0, 1, 0.16);
+	}
+	/*mortage*/
+	.mortage {
+		background: url(../img/mortgage-bg-1200.jpg) center bottom no-repeat;
+		background-size: cover;
+	}
+	/*map*/
+	.map-info {
+		right: 5%;
+	}
+}
+
+/* 768 - 992 px */
+@media screen and (max-width: 992px) {
+	.quiz__buttons {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.container {
+		max-width: 580px;
+	}
+	/*header*/
+	.header__phones {
+		margin-top: 0;
+	}
+	.header__phone {
+		font-size: 1.25rem;
+	}
+	.header__logo {
+		width: 60px;
+		height: 30px;
+		margin: 10px 10px 0 0;
+	}
+	.header__works {
+		margin: 10px 0 0;
+		font-size: 0.625rem;
+	}
+	/*manage*/
+	.manage__container {
+		max-width: 82%;
+		width: 100%;
+	}
+
+	.manage__test {
+		padding-top: 380px;
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+
+	.manage__offer {
+		max-width: 80%;
+	}
+
+	.manage__form {
+		max-width: 80%;
+		margin: 0;
+	}
+	/*intelect*/
+	.intelect {
+		padding: 115px 0 90px;
+	}
+	.intelect__cards {
+		justify-content: center;
+	}
+	/*servicess*/
+	.servicess {
+	    padding: 120px 0 75px;
+	}
+	.servicess__subtitle {
+		margin-bottom: 40px;
+	}
+	.servicess__card {
+		width: 100%;
+		max-width: 50%;
+	}
+	/*conditions*/
+	.conditions {
+		padding: 120px 0 70px;
+	}
+	.conditions__cards {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		-ms-align-items: center;
+		align-items: center;
+	}
+	.conditions__card {
+		margin-bottom: 50px;
+	}
+	.conditions__text {
+	    margin: 30px 0 40px;
+	    font-size: 1.5rem;
+	}
+	/*excursion*/
+	.excursion__container {
+		max-width: 82%;
+		width: 100%;
+	}
+
+	.excursion__test {
+		padding-top: 380px;
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+
+	.excursion__offer {
+		max-width: 80%;
+	}
+
+	.excursion__form {
+		max-width: 80%;
+		margin: 0;
+	}
+	/*flats-design*/
+	.flats-design {
+		padding-bottom: 80px;
+		padding-top: 75px;
+	}
+
+	.flats-design::before {
+		right: -10%;
+	}
+
+	.flats-design__preview {
+		width: 92.7%;
+	}
+
+	.flats-design__form-wrapper {
+		margin-top: 30px;
+	}
+
+	.flats-design__flats-form {
+		width: 86.25%;
+	}
+	/*mortage*/
+	.mortage {
+	    height: 600px;
+    	width: 100%;
+    	position: relative;
+	}
+	.mortage__content {
+		position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    max-width: 100%;
+	}
+	/*map*/
+	.map {
+	    padding-top: 1000px;
+	    background: url(../img/map-bg.jpg) no-repeat left top -90px;
+	    background-size: 170%;
+	    position: relative;
+	}
+	.map-info {
+		right: 15%;
+		max-width: 70%;
+		top: 35%;
+		transform: none;
+	}
+	/*footer*/
+	.footer {
+		padding: 70px 0;
+	}
+	.footer__wrap {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer__logo {
+		margin-right: 0;
+	}
+	.footer__text {
+		margin: 20px 0 35px;
+	}
+}
+
+/* 576 - 768 px */
+@media screen and (max-width: 768px) {
+	.container {
+		max-width: 540px;
+		width: 100%;
+	}
+	.quiz__buttons {
+		flex-direction: column;
+	}
+	
+	.quiz__buttom_prev {
+		margin-right: 0 !important;
+		margin-bottom: 15px;
+	}
+	/*header*/
+	.header__callback {
+		width: 190px;
+		margin-right: 15px;
+	}
+	.mobile-menu {
+		margin-left: 15px;
+	}
+	/*gallery*/
+	.gallery__button {
+		display: none;
+	}
+
+	.gallery__photo-item {
+		width: 101px;
+		height: 60px;
+	}
+	/*manage*/
+	.manage {
+		overflow: hidden;
+	}
+
+	.manage__offer,
+	.manage__form {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 0;
+	}
+
+	.small-form {
+		display: block;
+		text-align: center;
+	}
+
+	.form__label {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.small-form__input {
+		width: 100%;
+		display: block;
+	}
+
+	.small-form__input_tel {
+		margin-top: 25px;
+	}
+	/*servicess*/
+	.servicess {
+	    padding: 120px 0 75px;
+	}
+	.servicess__subtitle {
+		margin-bottom: 35px;
+	}
+	.servicess__card {
+		width: 100%;
+		max-width: 50%;
+	}
+	/*get-demo*/
+	.get-demo__content {
+		padding: 105px 100px 95px 34px;
+		margin-left: 0;
+	}
+	/*excursion*/
+	.excursion__offer,
+	.excursion__form {
+		width: 100%;
+		max-width: 100%;
+		padding-right: 0;
+	}
+
+	.small-form {
+		display: block;
+		text-align: left;
+	}
+
+	.form__label {
+		display: block;
+		margin-left: 0;
+	}
+
+	.small-form__input {
+		width: 100%;
+		display: block;
+	}
+
+	.small-form__input_tel {
+		margin-top: 25px;
+	}
+	/*flats-design*/
+	.flats-design {
+		padding-bottom: 80px;
+		padding-top: 75px;
+	}
+
+	.flats-design::before {
+		right: -10%;
+	}
+
+	.flats-design__preview {
+		width: 92.7%;
+	}
+
+	.flats-design__form-wrapper {
+		margin-top: 30px;
+	}
+
+	.flats-design__flats-form {
+		width: 86.25%;
+	}
+	/*mortage*/
+	.mortage__content {
+		padding-right: 70px;
+	}
+	.mortage__form small-form__input {
+		max-width: 200px;
+	}
+	/*map*/
+	.map-info {
+		top: 32%;
+		right: 10%;
+		max-width: 80%
+	}
+	.map {
+		background: url(../img/map-bg.jpg) no-repeat left top -90px;
+		padding-top: 1000px;
+    	background-size: 200%;
+	}
+}
+
+/* 320 - 576 px */
+@media screen and (max-width: 576px) {
+	.container {
+		max-width: 100%;
+		padding: 0 15px;
+		margin: 0 auto;
+	}
+	html,
+	body {
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 2.8rem;
+	}
+	/*quiz*/
+	/*.quiz__buttons {
+		flex-direction: column;
+	}
+	
+	.quiz__buttom_prev {
+		margin-right: 0 !important;
+		margin-bottom: 15px;
+	}*/
+
+	/*header*/
+	.header {	
+    	background: url(../img/header-bg-mobile.jpg) no-repeat center bottom;
+    	background-size: cover;
+	}
+	.header__callback {
+		display: none;
+	}
+	.header__offer {
+		text-align: center;
+		padding: 240px 40px 65px;
+	}
+	.header__btn {
+		margin: 35px auto 0;
+	}
+	/*gallery*/
+	.gallery__photo-item {
+		width: 80px;
+		height: 45px;
+	}
+	/*manage*/
+	.manage__container {
+		max-width: 92%;
+	}
+
+	.form__label {
+		width: 85%;
+	}
+
+	.manage__test {
+		padding-top: 180px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	/*intelect*/
+	.intelect {
+		padding: 65px 0 25px;
+	}
+		/*servicess*/
+	.servicess {
+	    padding: 70px 0 95px;
+	}
+	.servicess__subtitle {
+		margin-bottom: 35px;
+	}
+	.servicess__icon {
+		margin-top: 20px;
+	}
+	.servicess__card {
+		height: 260px;
+	}
+	/*conditions*/
+	.conditions {
+		padding: 65px 0 15px;
+	}
+	.conditions__text {
+	    margin: 30px 0 40px;
+	    font-size: 1.5rem;
+	}
+	/*excursion*/
+	.excursion__container {
+		max-width: 92%;
+	}
+
+	.form__label {
+		width: 85%;
+	}
+
+	.excursion__test {
+		padding-top: 180px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	/*flats-design*/
+	.flats-design::before {
+		display: none;
+	}
+	/*mortage*/
+	.mortage{
+		background: url(../img/mortgage-600.jpg) center bottom no-repeat;
+		background-size: cover;
+	}
+	.mortage__content {
+		padding-bottom: 60px;
+	}
+	.mortage__form .small-form {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+	}
+	.mortage__form-title {
+		text-align: center;
+	}
+	.mortage__form .form__label {
+		margin: 0 auto 15px;
+    	max-width: 263px;
+    	width: 100%;
+	}
+	.mortage__form .small-form__input {
+		flex-basis: none;
+		width: 100%;
+	}
+	.mortage__btn {
+		max-width: 263px;
+		margin: 0 auto;
+	}
+	/*map*/
+	.map-info {
+	    top: 35%;
+	    right: 0;
+	    max-width: 100%;
+	    padding: 30px 10px;
+	}
+	.map {
+	    background: url(../img/map-bg-mobile.jpg) no-repeat left -20px top -70px;
+	    padding-top: 980px;
+	    background-size: 120%;
+	}
+	/*footer*/
+	.footer {
+		padding: 70px 0 63px;
+	}
+	.footer__text {
+		margin: 20px 0 12px;
+	}
+}
+
+@media screen and (max-width: 435px) {
+	h1 {
+		font-size: 2.3rem;
+	}
+	/*header*/
+	.header__text {
+		font-size: 1.8rem;
+	}
+	.header__offer {
+		margin: 0 -15px;
+	}
+	/*gallery*/
+	.gallery__photo-item {
+		width: 65px;
+		height: 35px;
+	}
+	/*manage*/
+	.manage__container {
+		max-width: 99%;
+	}
+
+	.manage__test {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	.timer__unit {
+		font-size: 2.5rem;
+	}
+
+	.timer__unit::after {
+		font-size: .75rem;
+	}
+	/*servicess*/
+	.servicess__card {
+		max-width: 290px;
+	}
+	/*get-demo*/
+	.get-demo__content {
+		padding: 100px 25px 25px 25px;
+	}
+	.get-demo__button {
+		display: block;
+		margin: 0 auto;
+	}
+	/*excursion*/
+	.excursion__container {
+		max-width: 99%;
+	}
+
+	.excursion__test {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	.timer__unit {
+		font-size: 2.5rem;
+	}
+
+	.timer__unit::after {
+		font-size: .75rem;
+	}
+	/*flats-design*/
+	.flats-design__flats-form {
+			width: 90%;
+			padding-right: 25px;
+			padding-left: 25px;
+		}
+	/*mortage*/
+	.mortage__content {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	/*map*/
+	.map {
+		background-size: 130%
+	}
+	.map-info {
+		top: 25%;
+	}
+	.map__item {
+		padding-left: 5px;
+	}
+	.map__title::before {
+
+	    width: 77px;
+	    height: 96px;
+	    margin-right: 20px;
+	    background: url(../img/map-icons-1.png) no-repeat left -6px top;
+	    background-size: 330px;
+	}
+}

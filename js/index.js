@@ -500,21 +500,90 @@ class RoomOptions {
 		this.props = {
 			data: [...data],
 			container: container,
-			checkedFlatId: 3
+			checkedFlatId: 3,
+			currentCard: 3,
+			screenWidth: ''
 		}
 
+		this.firstScreenHandler();
 		this.renderCards();
 		this.changeCardsHandler();
 	}
 
 	renderCards() {
 		const {container, data, checkedFlatId} = this.props,
-			currentCardsList = data[checkedFlatId].flatData;
+			currentCardsList = data[checkedFlatId].flatData,
+			media = window.matchMedia('screen and (max-width: 1200px');
 
-		container.innerText = '';
+		// container.innerText = '';
 
-		currentCardsList.forEach(cardData => {
-			container.append(this.renderCard(cardData));
+		media.addListener(() => {
+			if (!media.matches) {
+				container.innerText = '';
+				currentCardsList.forEach(cardData => {
+					container.append(this.renderCard(cardData));
+				});
+			}
+			else {
+				container.innerText = '';
+				this.renderSlider();
+			}
+		});
+
+		if (this.props.screenWidth > 1200) {
+			container.innerText = '';
+			currentCardsList.forEach(cardData => {
+					container.append(this.renderCard(cardData));
+				});
+		}
+		else {
+			container.innerText = '';
+			this.renderSlider();
+		}
+	}
+
+	firstScreenHandler() {
+		let width = document.body.clientWidth;
+
+		this.props.screenWidth = document.body.clientWidth;;
+		setTimeout(()=> {
+			width = document.body.clientWidth;
+		}, 500);
+	}
+
+	renderSlider() {
+		const {container, data, checkedFlatId, currentCard: cardId} = this.props,
+			currentCardsList = data[checkedFlatId].flatData,
+			currentCard = currentCardsList[cardId];
+
+		const cardContainer = $.create('div', 'flat-cards__card-wrapper'), 
+			leftButton = $.create('button', 'options__arr options__arr_left'),
+			rightButton = $.create('button', 'options__arr options__arr_right');
+	
+		cardContainer.append(this.renderCard(currentCard));
+		container.append(leftButton, cardContainer, rightButton);
+		this.cardChangehandler(currentCardsList);
+	}
+
+	cardChangehandler(data) {
+		const container = $.get('.flat-cards__card').parentNode,
+			left = $.get('.options__arr_left'),
+			right = $.get('.options__arr_right');
+		
+		left.addEventListener('click', () => {
+			container.innerText = '';
+			this.props.currentCard -= 1;
+			if (this.props.currentCard < 0)
+				this.props.currentCard = data.length - 1;
+			container.append(this.renderCard(data[this.props.currentCard]));
+		});
+
+		right.addEventListener('click', () => {
+			container.innerText = '';
+			this.props.currentCard += 1;
+			if (this.props.currentCard > data.length - 1)
+				this.props.currentCard = 0;
+			container.append(this.renderCard(data[this.props.currentCard]));
 		});
 	}
 
@@ -567,6 +636,7 @@ class RoomOptions {
 
 			target.classList.add('flats-preview__checked');
 			this.props.checkedFlatId = +id;
+			this.firstScreenHandler();
 			this.renderCards();
 		});
 	}

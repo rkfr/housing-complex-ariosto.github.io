@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
 	<!-- script -->
 	<script src="js/index.js" defer></script>
 </head>
@@ -67,14 +68,14 @@
 			<p class="gallery__description">Погрузитесь в мир Вашего будущего дома!</p>
 		</div>
 		<button class="gallery__button gallery__button_left"></button>
-		<div class="gallery__photos"></div> <!-- slider -->
+		<div class="gallery__photos"></div>
 		<button class="gallery__button gallery__button_right"></button>
 	</section>
 	<!-- end gallery -->
 
 	<!-- start manage -->
 	<section class="manage">
-		<div class="container">
+		<div class="container manage__container">
 			<div class="manage__to-get d-flex">
 				<div class="manage__offer">
 					<h2 class="manage__title">Успей получить</h2>
@@ -89,7 +90,6 @@
 				<div class="manage__form">
 					<h4 class="manage__form-title">Записаться на просмотр</h4>
 					<form action="success.php" class="small-form d-flex js-form" data-id="popupResult">
-						<input name="id-form" type="text" value=" Вызов мастера для расчёта стоимости" hidden>
 						<label class="form__label">
 							<input class="small-form__input small-form__input_name" type="text" name="name" placeholder="Введите имя" required>
 						</label>
@@ -303,7 +303,7 @@
 
 	<!-- layout-option start -->
 	<section class="layout-option">
-		<div class="container">
+		<div class="container layout-options__container">
 			<h2 class="layout-option__title">Варианты планировок</h2>
 			<p class="layout-option__subtitle">Гармония внешнего и внутреннего пространства!</p>
 			<div class="layout-option__flats-preview">
@@ -351,7 +351,6 @@
 				<div class="excursion__form">
 					<h4 class="excursion__form-title">Записаться на просмотр</h4>
 					<form action="success.php" class="small-form d-flex js-form" data-id="popupResult">
-						<input name="id-form" type="text" value=" Вызов мастера для расчёта стоимости" hidden>
 						<label class="form__label">
 							<input class="small-form__input small-form__input_name" type="text" name="name" placeholder="Введите имя" required>
 						</label>

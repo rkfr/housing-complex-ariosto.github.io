@@ -503,8 +503,6 @@ button:active {
 	background-size: auto;
 }
 
-/*--get section--*/
-
 /*timer*/
 
 .manage__to-get {
@@ -606,6 +604,7 @@ button:active {
   	font-family: "Cent-BT-Bold", sans-serif;
   	color: rgba(46, 46, 46, 0.502);
   	font-size: 1.125rem;
+  	background: transparent;
 }
 
 /*.small-form__input_name {}*/
@@ -660,9 +659,6 @@ button:active {
 	padding: 24px 75px;
 }
 
-/*#form*/
-
-/*manage start*/
 /*manage end*/
 
 /*4. intelect*/
@@ -924,7 +920,7 @@ button:active {
 /*get-demo start*/
 
 .get-demo {
-	background: url(../img/get-demo-bg.jpg) center center no-repeat;
+	background: url(../img/get-demo-bg.jpg) center bottom no-repeat;
 	background-size: cover;
 	opacity: 0.961;
 	box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.2);
@@ -933,8 +929,10 @@ button:active {
 .get-demo__content {
 	width: 100%;
 	max-width: 800px;
-	padding: 350px 200px 96px 70px;
-	background: url(../img/manage-test-bg.png) center bottom no-repeat;
+	padding: 350px 200px 94px 70px;
+	margin-left: -72px;
+	background: url(../img/manage-blur-bg.png) center bottom -50px no-repeat;
+	background-size: cover;
 }
 
 .get-demo__title {
@@ -954,6 +952,7 @@ button:active {
 	margin-top: 37px;
 	margin-bottom: 47px;
 	font-size: 1.75rem;
+	letter-spacing: 0.06em;
 	color: rgb(46, 46, 46);
 }
 
@@ -968,11 +967,9 @@ button:active {
 
 .layout-option {
 	padding-top: 150px;
-	/*background: #fcfcfc;*/
 	text-align: center;
+	padding-bottom: 120px;
 }
-
-/*.layout-option__title {}*/
 
 .layout-option__subtitle {
 	margin-top: 28px;
@@ -980,8 +977,6 @@ button:active {
 	color: rgb(46, 46, 46);
 	font-size: 1.5rem;
 }
-
-/*.layout-option__flats-preview {}*/
 
 .flats-preview__list {
 	padding: 0 22px;
@@ -1007,24 +1002,18 @@ button:active {
 	border-bottom: 4px solid rgb(242, 137, 25);
 }
 
-.flats-preview__list,
-.flats-preview__item,
-.flats-preview__checked {
-	/*transition: .5s;*/
-}
-
 /*cards*/
 
-/*.flats-preview__flat-cards {}*/
+.flats-preview__flat-cards {
+	justify-content: space-between;
+}
 
 .flat-cards__card {
 	padding: 45px 30px 60px 30px;
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 46px 0px rgba(0, 0, 1, 0.09);
-}
-
-.flat-cards__card:not(:last-child) {
-	margin-right: 18px;
+	flex-basis: 23%;
+	position: relative;
 }
 
 .flat-cards__image {
@@ -1067,14 +1056,36 @@ button:active {
 	font-family: "Cent-BT-Bold", sans-serif;
 	color: rgba(46, 46, 46, 0.502);
 	font-size: 1.120rem;
+	margin-bottom: 140px;
 }
-
-/*.flat-cards__get-number {}*/
 
 .flat-cards__button {
 	margin-top: 27px;
 	padding: 16px 36px;
 	cursor: pointer;
+	margin: 0;
+	position: absolute;
+	bottom: 60px;
+	white-space: nowrap;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.options__arr {
+	border: solid #000;
+	background: transparent;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.options__arr_right {
+	transform: rotate(-45deg);
+}
+
+.options__arr_left {
+	transform:rotate(135deg);
 }
 
 /*layout-option end*/
@@ -1146,10 +1157,6 @@ button:active {
   	color: rgba(46, 46, 46, 0.502);
   	font-size: 1.125rem;
 }
-
-/*.small-form__input_name {}*/
-
-/*.small-form__input_tel {}*/
 
 .small-form__btn {
 	padding: 17px 20px;
