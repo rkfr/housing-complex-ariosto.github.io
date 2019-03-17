@@ -1037,7 +1037,6 @@ class ModalWindow {
 	modalHandler() {
 
 		return (e) => {
-			e.preventDefault();
 			const {target} = e,
 				className = this.props.container.className.split(' ');
 
