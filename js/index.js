@@ -685,11 +685,6 @@ class Quiz {
 			currentQuestionCard = questions[id],
 			{answers} = currentQuestionCard;
 
-		$.setStyle(container, {
-			'padding': '500px 84px 90px 130px',
-			'position': 'relative'
-		});
-
 		const title = $.create('h3', 'quiz__question'),
 			answersWrapper = $.create('div', 'quiz__answers'),
 			buttons = $.create('div', 'quiz__buttons'),
