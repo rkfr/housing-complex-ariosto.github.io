@@ -93,11 +93,11 @@ h4 {
 }
 
 h5 {
-	font-size: 1.25rem;
+	font-size: 1.375rem;
 }
 
 h6 {
-	font-size: 13px;
+	font-size: 1.25rem;
 }
 
 p {
@@ -398,6 +398,72 @@ button:active {
 	margin-top: 35px;
 }
 
+/*form*/
+.header__form {
+	width: 100%;
+	padding: 50px 54px 60px;
+	position: fixed;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 430px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	z-index: 11;
+	box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.21);
+}
+
+
+.header__form-title {
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+.header__form-input {
+	display: block;
+	width: 100%;
+	border: none;
+	padding: 6px 0;
+	border-bottom: 1px solid rgb(46, 46, 46, 0.502);
+	color: rgba(46, 46, 46, 0.502);
+	font-size: 1rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+}
+
+.header__form-input_get-number {
+	margin: 25px 0 30px;
+}
+
+.header__form-secure {
+	display: block;
+	color: rgba(46, 46, 46, 0.341);
+	font-size: 1em;
+	text-align: center;
+}
+
+.header__form-secure::before {
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 13px;
+	background: url(../img/icons-1.png) no-repeat left top;
+}
+
+.header__form-btn {
+	margin-bottom: 32px;
+	padding: 19px 55px;
+	font-size: 1rem;
+}
+
 /*Header End*/
 
 /*2. gallery*/
@@ -468,6 +534,7 @@ button:active {
 
 .gallery__photo-item {
 	margin: 8px;
+	box-shadow: 4px 4px 4px 0px rgba(0, 0, 1, 0.31);
 	display: block;
 	height: 119px;
 	width: 194px;
@@ -526,12 +593,39 @@ button:active {
 	padding-top: 180px;
 	background: url(../img/manage-bg.jpg) center bottom no-repeat;
 	background-size: auto;
+	position: relative;
+}
+
+.manage::before,
+.manage::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+}
+.manage::before {
+	left: 0;
+	width: 25vw;
+	height: 20vw;
+	background: url(../img/sky-1.png) no-repeat left center;
+	background-size: cover;
+}
+
+.manage::after {
+	right: 0;
+	width: 55vw;
+	height: 33vw;
+	background: url(../img/sky-2.png) no-repeat right center;
+	background-size: cover;
+	opacity: 0.5;
 }
 
 /*timer*/
 
 .manage__to-get {
 	justify-content: space-between;
+	position: relative;
+	z-index: 2;
 }
 
 .manage__offer {
@@ -939,6 +1033,71 @@ button:active {
 	margin-top: 15px;
 }
 
+/*form*/
+.conditions__form {
+	width: 100%;
+	padding: 50px 54px 60px;
+	position: fixed;
+	background: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 430px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	z-index: 11;
+	box-shadow: 0px 0px 150px 0px rgba(0, 0, 0, 0.31);
+}
+
+.conditions__form-title {
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+.conditions__form-input {
+	display: block;
+	width: 100%;
+	border: none;
+	padding: 6px 0;
+	border-bottom: 1px solid rgb(46, 46, 46, 0.502);
+	color: rgba(46, 46, 46, 0.502);
+	font-size: 1rem;
+	font-family: "Cent-BT-Bold", sans-serif;
+}
+
+.conditions__form-input_get-number {
+	margin: 25px 0 30px;
+}
+
+.conditions__form-secure {
+	display: block;
+	color: rgba(46, 46, 46, 0.341);
+	font-size: 1em;
+	text-align: center;
+}
+
+.conditions__form-secure::before {
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 13px;
+	background: url(../img/icons-1.png) no-repeat left top;
+}
+
+.conditions__form-btn {
+	margin-bottom: 32px;
+	padding: 19px 55px;
+	font-size: 1rem;
+}
+
 /*conditions end*/
 
 /*excursion*/
@@ -993,7 +1152,7 @@ button:active {
 .layout-option {
 	padding-top: 150px;
 	text-align: center;
-	padding-bottom: 120px;
+/*	padding-bottom: 120px;*/
 }
 
 .layout-option__subtitle {
@@ -1420,6 +1579,14 @@ button:active {
 	font-size: 1em;
 }
 
+.flats-form__secure-info::before {
+	display: inline-block;
+	content: '';
+	width: 10px;
+	height: 13px;
+	background: url(../img/icons-1.png) no-repeat left top;
+}
+
 .flats-form__button {
 	margin-bottom: 32px;
 	padding: 19px 55px;
@@ -1436,6 +1603,8 @@ button:active {
 	background: url(../img/mortgage-bg.jpg) center bottom no-repeat;
 	background-size: cover;
 	box-shadow: 0px 0px 76px 0px rgba(0, 0, 0, 0.2);
+	position: relative;
+    z-index: 5;
 }
 
 .mortage__content {
@@ -1572,6 +1741,9 @@ button:active {
 
 .footer {
 	padding: 68px 0 82px;
+	box-shadow: 0px 0px 81px 0px rgba(0, 0, 0, 0.17);
+	position: relative;
+	z-index: 5;
 }
 
 .footer__wrap {

@@ -16,6 +16,7 @@
     max-width: 395px;
     background: rgb(255, 255, 255, 0.87);
     padding: 35px 90px 35px 0;
+    z-index: 10;
 	}
 	.mobile-menu {
 		display: block;
@@ -358,6 +359,9 @@
 	    width: 100%;
 	    max-width: 100%;
 	}
+	.mortage__btn {
+		margin: 15px auto 0 0;
+	}
 	/*map*/
 	.map {
 	    padding-top: 1000px;
@@ -574,6 +578,13 @@
 	.header__btn {
 		margin: 35px auto 0;
 	}
+	.header__form {
+		padding: 10%;
+		width: 90%;
+	}
+	.header__form-btn {
+		padding: 19px 20px;
+	}
 	/*gallery*/
 	.gallery__photo-item {
 		width: 80px;
@@ -618,6 +629,13 @@
 	    margin: 30px 0 40px;
 	    font-size: 1.5rem;
 	}
+	.conditions__form {
+		padding: 10%;
+		width: 90%;
+	}
+	.conditions__form-btn {
+		padding: 19px 20px;
+	}
 	/*excursion*/
 	.excursion__container {
 		max-width: 92%;
@@ -650,18 +668,20 @@
 		-ms-flex-direction: column;
 		-o-flex-direction: column;
 		flex-direction: column;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
 	}
 	.mortage__form-title {
 		text-align: center;
+		margin-bottom: 0;
 	}
 	.mortage__form .form__label {
 		margin: 0 auto 15px;
     	max-width: 263px;
     	width: 100%;
-	}
-	.mortage__form .small-form__input {
-		flex-basis: none;
-		width: 100%;
 	}
 	.mortage__btn {
 		max-width: 263px;

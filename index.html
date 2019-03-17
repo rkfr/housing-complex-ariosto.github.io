@@ -59,6 +59,23 @@
 					Заказать просмотр
 				</a>
 			</div>
+			<form class="header__form js-form" action="success.php" data-id="popupResult">
+				<h5 class="header__form-title">
+					Заполните форму
+				</h5>
+				<label class="header__form-label">
+					<input type="text" class="header__form-input" placeholder="Введите имя" name="name">
+				</label>
+				<label class="header__form-label">
+					<input type="tel" class="header__form-input header__form-input_get-number" placeholder="Введите телефон" name="tel">
+				</label>
+				<button class="header__form-btn btn">
+					Заказать звонок
+				</button>
+				<span class="header__form-secure">
+					Ваши данные защищены
+				</span>
+			</form>
 		</div>
 	</header>
 	<!-- end header -->
@@ -285,6 +302,23 @@
 					</a>
 				</div>
 			</div>
+			<form class="conditions__form js-form" action="success.php" data-id="popupResult">
+				<h5 class="conditions__form-title">
+					Заполните форму
+				</h5>
+				<label class="conditions__form-label">
+					<input type="text" class="conditions__form-input" placeholder="Введите имя" name="name">
+				</label>
+				<label class="conditions__form-label">
+					<input type="tel" class="conditions__form-input conditions__form-input_get-number" placeholder="Введите телефон" name="tel">
+				</label>
+				<button class="conditions__form-btn btn">
+					Заказать звонок
+				</button>
+				<span class="conditions__form-secure">
+					Ваши данные защищены
+				</span>
+			</form>
 		</div>
 	</section>
 	<!-- conditions end-->
@@ -403,7 +437,7 @@
 				</div>
 			</div>
 			<div class="flats-design__form-wrapper">
-				<form action="#" class="flats-design__flats-form js-form" action="success.php" data-id="popupResult">
+				<form class="flats-design__flats-form js-form" action="success.php" data-id="popupResult">
 					<h2 class="flats-form__title">
 						Хотите посмотреть?
 					</h2>
@@ -440,7 +474,7 @@
 						<label class="form__label">
 							<input class="small-form__input small-form__input_tel" type="text" name="tel" placeholder="Введите номер" required>
 						</label>
-						<button class="btn small-form__btn mortage__btn" data-submit>
+						<button class="btn mortage__btn" data-submit>
 							Рассчитать вариант
 						</button>
 					</form>
