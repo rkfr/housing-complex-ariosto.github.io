@@ -297,6 +297,10 @@ button:active {
 	font-size: 1.125rem;
 }
 
+.menu__open {
+	display: block !important;
+}
+
 .menu__item {
 	margin-right: 28px;
 	font-size: 1.125rem;
@@ -408,11 +412,12 @@ button:active {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	max-width: 430px;
-	display: -webkit-flex;
+	/*display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
-	display: flex;
+	display: flex;*/
+	display: none;
 	-webkit-flex-direction: column;
 	-moz-flex-direction: column;
 	-ms-flex-direction: column;
@@ -1043,11 +1048,12 @@ button:active {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	max-width: 430px;
-	display: -webkit-flex;
+	/*display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
-	display: flex;
+	display: flex;*/
+	display: none;
 	-webkit-flex-direction: column;
 	-moz-flex-direction: column;
 	-ms-flex-direction: column;

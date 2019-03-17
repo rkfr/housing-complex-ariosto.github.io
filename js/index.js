@@ -1012,3 +1012,55 @@ const excursionQuizContainer = $.get('.excursion__test'),
 excursionQuiz.startQuiz($.get('.start-esxursion-test'));
 
 // end excursion quiz
+
+// modal handler
+
+class ModalWindow {
+	constructor() {
+		this.props = {
+			container: '',
+			target: '',
+			className: ''
+		}
+		window.addEventListener('click', this.modalHandler());
+	}
+
+	setProps(container, target, param) {
+		this.props.container = container;
+		this.props.target = target;
+		
+		if (arguments.length > 2) {
+			this.props.className = param.className;
+		}
+	}
+
+	modalHandler() {
+
+		return (e) => {
+			e.preventDefault();
+			const {target} = e,
+				className = this.props.container.className.split(' ');
+
+			if (target.className === this.props.target.className) {
+				if (this.props.className)
+					this.props.container.classList.toggle(this.props.className);
+				else
+					this.props.container.style.display = 'flex';
+			}
+			else if (!target.closest(`.${className[0]}`)) {
+				this.props.container.style.display = 'none';
+				if (target === this.props.target)
+					this.props.container.style.display = 'none';
+			}
+		}
+	}
+}
+
+const headerForm = new ModalWindow();
+headerForm.setProps($.get('.header__form'), $.get('.header__btn'));
+
+const conditionsForm = new ModalWindow();
+conditionsForm.setProps($.get('.conditions__form'), $.get('.conditions__btn'));
+
+const mobileMenu = new ModalWindow();
+mobileMenu.setProps($.get('.menu'), $.get('.mobile-menu'), {className: 'menu__open'});
