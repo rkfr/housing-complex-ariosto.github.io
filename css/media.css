@@ -1,3 +1,19 @@
+@media screen and (min-width: 1800px) {
+	.gallery__button_right {
+		right: 6%;
+	}
+	.gallery__button_left {
+		left: 6%;
+	}
+}
+
+@media screen and (max-width: 1700px) {
+	.header__offer {
+	   padding: 125px 55px 160px;
+	   margin: 44px 0 0 0;
+	}
+}
+
 @media screen and (max-width: 1500px) {
 	.container {
 		max-width: 1170px;
@@ -168,7 +184,7 @@
 
 	.flats-preview__list {
 		flex-wrap: wrap;
-		justify-content: flex-start;
+		justify-content: space-evenly;
 	}
 	/*flats-design*/
 	.flats-design {
@@ -223,10 +239,6 @@
 
 /* 768 - 992 px */
 @media screen and (max-width: 992px) {
-	.quiz__buttons {
-		display: flex;
-		justify-content: space-between;
-	}
 
 	.container {
 		max-width: 580px;
@@ -315,6 +327,8 @@
 		padding-top: 380px;
 		padding-left: 55px;
 		padding-right: 55px;
+		background: url(../img/manage-test-bg.png) center bottom no-repeat;
+    	background-size: cover;
 	}
 
 	.excursion__offer {
@@ -360,7 +374,7 @@
 	    max-width: 100%;
 	}
 	.mortage__btn {
-		margin: 15px auto 0 0;
+		margin: 25px auto 0 0;
 	}
 	/*map*/
 	.map {
@@ -401,14 +415,7 @@
 		max-width: 540px;
 		width: 100%;
 	}
-	.quiz__buttons {
-		flex-direction: column;
-	}
-	
-	.quiz__buttom_prev {
-		margin-right: 0 !important;
-		margin-bottom: 15px;
-	}
+
 	/*header*/
 	.header__callback {
 		width: 190px;
@@ -451,10 +458,11 @@
 	.small-form__input {
 		width: 100%;
 		display: block;
+		margin-bottom: 15px;
 	}
 
 	.small-form__input_tel {
-		margin-top: 25px;
+		margin-top: 0;
 	}
 	/*servicess*/
 	.servicess {
@@ -496,7 +504,7 @@
 	}
 
 	.small-form__input_tel {
-		margin-top: 25px;
+		margin-top: 0;
 	}
 	/*flats-design*/
 	.flats-design {
@@ -553,15 +561,6 @@
 	h1 {
 		font-size: 2.8rem;
 	}
-	/*quiz*/
-	/*.quiz__buttons {
-		flex-direction: column;
-	}
-	
-	.quiz__buttom_prev {
-		margin-right: 0 !important;
-		margin-bottom: 15px;
-	}*/
 
 	/*header*/
 	.header {	
@@ -585,12 +584,31 @@
 	.header__form-btn {
 		padding: 19px 20px;
 	}
+	.nav {
+		position: fixed;
+	    top: 0;
+	    left: 0;
+	    padding: 10px 0 10px;
+	}
+	/*layout-option*/
+	.layout-option {
+		padding-top: 80px;
+	}
 	/*gallery*/
+	.gallery {
+		padding-top: 80px;
+	}
 	.gallery__photo-item {
 		width: 80px;
 		height: 45px;
 	}
+	.gallery__photo-list {
+		top: -19px;
+	}
 	/*manage*/
+	.manage {
+		padding-top: 80px;
+	}
 	.manage__container {
 		max-width: 92%;
 	}
@@ -637,6 +655,11 @@
 		padding: 19px 20px;
 	}
 	/*excursion*/
+	.excursion {
+		padding-top: 80px;
+		background: url(../img/excursion-bg-mobile.jpg) center bottom no-repeat;
+    	background-size: 180%;
+	}
 	.excursion__container {
 		max-width: 92%;
 	}
@@ -646,9 +669,7 @@
 	}
 
 	.excursion__test {
-		padding-top: 180px;
-		padding-right: 15px;
-		padding-left: 15px;
+		padding: 100px 10px 60px;
 	}
 	/*flats-design*/
 	.flats-design::before {
@@ -661,6 +682,10 @@
 	}
 	.mortage__content {
 		padding-bottom: 60px;
+		padding-top: 200px;
+	}
+	.mortage__title {
+		margin-top: 50px;
 	}
 	.mortage__form .small-form {
 		-webkit-flex-direction: column;
@@ -676,7 +701,7 @@
 	}
 	.mortage__form-title {
 		text-align: center;
-		margin-bottom: 0;
+		margin-bottom: 15px;
 	}
 	.mortage__form .form__label {
 		margin: 0 auto 15px;
@@ -685,7 +710,7 @@
 	}
 	.mortage__btn {
 		max-width: 263px;
-		margin: 0 auto;
+		margin: 25px auto 0;
 	}
 	/*map*/
 	.map-info {
@@ -696,8 +721,16 @@
 	}
 	.map {
 	    background: url(../img/map-bg-mobile.jpg) no-repeat left -20px top -70px;
-	    padding-top: 980px;
+	    padding-top: 870px;
 	    background-size: 120%;
+	}
+	/*get-demo*/
+	.get-demo__form {
+		padding: 10%;
+		width: 90%;
+	}
+	.get-demo__form-btn {
+		padding: 19px 20px;
 	}
 	/*footer*/
 	.footer {
@@ -705,6 +738,9 @@
 	}
 	.footer__text {
 		margin: 20px 0 12px;
+	}
+	.gallery__photo-item:last-child {
+		display: none;
 	}
 }
 
@@ -798,5 +834,12 @@
 	    margin-right: 20px;
 	    background: url(../img/map-icons-1.png) no-repeat left -6px top;
 	    background-size: 330px;
+	}
+	.flats-preview__list {
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;	
 	}
 }

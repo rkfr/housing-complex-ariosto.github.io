@@ -1,5 +1,16 @@
 'use strict'
 
+// ***********************
+
+		// all scripts created by rkfr 
+		 						// 21.03.2019
+		 	// contacts
+		// https://github.com/rkfr
+		// xvid2y@gmail.com
+
+// ***********************
+
+
 // ***practical dom lib
 
 class ElementsConstructor {
@@ -52,22 +63,27 @@ const photoGalleryData = [
 	{
 		id: 0,
 		alt: `street`,
-		src: `img/street.jpg`
+		src: `img/galery-1.jpg`
 	},
 	{
 		id: 1,
 		alt: `street2`,
-		src: `https://gdevkievezhithorosho.com/wp-content/uploads/2018/10/ZhK-Campus-vizualizacija.jpg`
+		src: `img/galery-2.jpg`
 	}, 
 	{
 		id: 2,
 		alt: `none`,
-		src: `https://cdn.spbguru.ru/uploads/flats/886/kvartry-v-zhk-oblaka-na-lesnoj-1519123363.6997_.jpg`
+		src: `img/galery-3.jpg`
 	},
 	{
 		id: 3,
 		alt: 'zhk-4',
-		src: `https://img.avaho.ru/rsz/upload/objects_photo/915681_c834fddbb0ef64199d19e3e1305caa8d.[w-850_h-550_strict-1_q-75].jpg`
+		src: `img/galery-4.jpg`
+	},
+	{
+		id: 4,
+		alt: 'zhk-5',
+		src: `img/galery-5.jpg`
 	}
 ];
 
@@ -190,7 +206,7 @@ class PhotoGallery {
 			const id = +image.dataset.imageMinId;
 
 			if (id === currentPhoto) {
-				image.style.transform = 'translateY(-20px)';
+				image.style.transform = 'translateY(-10px)';
 			}
 			else {
 				image.style.transform = '';
@@ -220,12 +236,25 @@ const photoGallery = new PhotoGallery(photoGalleryContainer, photoGalleryData);
 // timer start
 
 // ############!!! at the line below you can set your destination date
-const destinationDate = '6.04.2019'; // time will be set at 00:00:00
+const currentDate = new Date(),
+	currentDay = currentDate.getDate(),
+	currentMonth = currentDate.getMonth(),
+	currentYear = currentDate.getFullYear();
+
+let targetDate = [currentDay, currentMonth + 1, currentYear],
+	targetUserDate = [];
+
+
+if (!localStorage.getItem('userTime')) {
+	localStorage.setItem('userTime', JSON.stringify(targetDate));
+}
+
+
+targetUserDate = JSON.parse(localStorage.getItem('userTime'));
 
 const manageTimer = function(destDate){
 
-	let destinationDate = destDate.split('.');
-	destinationDate = new Date(+destinationDate[2], +destinationDate[1] - 1, +destinationDate[0]);
+	const destinationDate = new Date(destDate[2], destDate[1], destDate[0]);
 
 	let today = new Date();
 	const seconds = Math.floor((destinationDate - today) / 1000);
@@ -248,19 +277,24 @@ function showTime() {
 		mm = date[2],
 		ss = date[3];
 
-	setInterval(() => {
+	const timer = setInterval(() => {
 		const {
 				secondsToshow: sec,
 				minutesToshow: min,
 				hoursToshow: hour,
 				daysToshow: day
-			} = manageTimer(destinationDate);
+			} = manageTimer(targetUserDate);
 		
+		if (day < 0) {
+			clearInterval(timer);
+			return;
+		}
+
 		dd.innerText = (day < 10) ? `0${day}` : day;
 		hh.innerText = (hour < 10) ? `0${hour}` : hour;
 		mm.innerText = (min < 10) ? `0${min}` : min;
 		ss.innerText = (sec < 10) ? `0${sec}` : sec;
-	}, 1000)
+	}, 1000);
 }
 showTime();
 
@@ -269,40 +303,25 @@ showTime();
 // start options script
 
 const flatsData = [
+
 	{
 		flatId: 0,
 		flatData: [
 			{
 				image: {
-					alt: 'flat',
-					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+					alt: 'Однокомнатная квартира',
+					src: 'img/one-room.png'
 				},
-				title: 'С сауной',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'Однокомнатная квартира',
+				subtitle: '48.22 м<sup>2</sup>'
 			},
 			{
 				image: {
-					alt: 'flat',
-					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
+					alt: 'Однокомнатная квартира',
+					src: 'img/one-room-1.png'
 				},
-				title: '2 санузла',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
-				},
-				title: 'С Терасой',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://hiphousegirl.files.wordpress.com/2010/02/lr-1-chaise-1.jpg'
-				},
-				title: 'Кабинет',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'Однокомнатная квартира',
+				subtitle: '41.81 м<sup>2</sup>'
 			}
 		]
 	},
@@ -311,35 +330,19 @@ const flatsData = [
 		flatData: [
 			{
 				image: {
-					alt: 'flat',
-					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+					alt: 'Двухкомнатная квартира',
+					src: 'img/two-rooms-1.png'
 				},
-				title: 'С сауной 2-room',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'Двухкомнатная квартира',
+				subtitle: '61.36 м<sup>2</sup>'
 			},
 			{
 				image: {
-					alt: 'flat',
-					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
+					alt: 'Двухкомнатная квартира',
+					src: 'img/two-rooms.png'
 				},
-				title: '2 санузла 2-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
-				},
-				title: 'С Терасой 2-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://warmvalleylodgewy.com/wp-content/uploads/Two-Bedroom-Floor-Plan-Master-800.png'
-				},
-				title: 'Кабинет 2-room',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'Двухкомнатная квартира',
+				subtitle: '76.46 м<sup>2</sup>'
 			}
 		]
 	},
@@ -348,160 +351,33 @@ const flatsData = [
 		flatData: [
 			{
 				image: {
-					alt: 'flat',
-					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+					alt: 'студия',
+					src: 'img/studio.png'
 				},
-				title: 'С сауной 2-room-euro',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'студия',
+				subtitle: '28.31 м<sup>2</sup>'
 			},
 			{
 				image: {
-					alt: 'flat',
-					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
+					alt: 'студия',
+					src: 'img/studio-1.png'
 				},
-				title: '2 санузла 2-room-euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
-				},
-				title: 'С Терасой 2-room-euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://jacksonsquareliving.com/wp-content/uploads/2015/06/Jackson-Square-Floor-Plan-A-800-705x705.jpg'
-				},
-				title: 'Кабинет 2-room-euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			}
-		]
-	},
-	{
-		flatId: 3,
-		flatData: [
-			{
-				image: {
-					alt: 'flat',
-					src: 'img/room-example.jpg'
-				},
-				title: 'С сауной 3-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'img/room-example.jpg'
-				},
-				title: '2 санузла 3-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'img/room-example.jpg'
-				},
-				title: 'С Терасой 3-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'img/room-example.jpg'
-				},
-				title: 'Кабинет 3-room',
-				subtitle: 'от 40 м<sup>2</sup>'
-			}
-		]
-	},
-	{
-		flatId: 4,
-		flatData: [
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
-				},
-				title: 'С сауной 3-room euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
-				},
-				title: '2 санузла 3-room euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
-				},
-				title: 'С Терасой 3-room euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'http://www.ktimatoemporiki.gr/new/properties_images/cat_28/NP-306/plans/NP-306_6.4Plan.jpg'
-				},
-				title: 'Кабинет 3-room euro',
-				subtitle: 'от 40 м<sup>2</sup>'
-			}
-		]
-	},
-	{
-		flatId: 5,
-		flatData: [
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
-				},
-				title: 'С сауной studio',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
-				},
-				title: '2 санузла studio',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
-				},
-				title: 'С Терасой studio',
-				subtitle: 'от 40 м<sup>2</sup>'
-			},
-			{
-				image: {
-					alt: 'flat',
-					src: 'https://i.pinimg.com/originals/97/73/ae/9773aeb849b1fdaae6f8578a87b5cd81.jpg'
-				},
-				title: 'Кабинет studio',
-				subtitle: 'от 40 м<sup>2</sup>'
+				title: 'студия',
+				subtitle: '35.26 м<sup>2</sup>'
 			}
 		]
 	}
 ];
 
-const $ = new ElementsConstructor();
+const dom = new ElementsConstructor();
 
 class RoomOptions {
 	constructor(container, data) {
 		this.props = {
 			data: [...data],
 			container: container,
-			checkedFlatId: 3,
-			currentCard: 3,
+			checkedFlatId: 2,
+			currentCard: 0,
 			screenWidth: ''
 		}
 
@@ -540,6 +416,8 @@ class RoomOptions {
 			container.innerText = '';
 			this.renderSlider();
 		}
+
+		this.showLagePhoto();
 	}
 
 	firstScreenHandler() {
@@ -556,9 +434,9 @@ class RoomOptions {
 			currentCardsList = data[checkedFlatId].flatData,
 			currentCard = currentCardsList[cardId];
 
-		const cardContainer = $.create('div', 'flat-cards__card-wrapper'), 
-			leftButton = $.create('button', 'options__arr options__arr_left'),
-			rightButton = $.create('button', 'options__arr options__arr_right');
+		const cardContainer = dom.create('div', 'flat-cards__card-wrapper'), 
+			leftButton = dom.create('button', 'options__arr options__arr_left'),
+			rightButton = dom.create('button', 'options__arr options__arr_right');
 	
 		cardContainer.append(this.renderCard(currentCard));
 		container.append(leftButton, cardContainer, rightButton);
@@ -566,9 +444,9 @@ class RoomOptions {
 	}
 
 	cardChangehandler(data) {
-		const container = $.get('.flat-cards__card').parentNode,
-			left = $.get('.options__arr_left'),
-			right = $.get('.options__arr_right');
+		const container = dom.get('.flat-cards__card').parentNode,
+			left = dom.get('.options__arr_left'),
+			right = dom.get('.options__arr_right');
 		
 		left.addEventListener('click', () => {
 			container.innerText = '';
@@ -588,39 +466,45 @@ class RoomOptions {
 	}
 
 	renderCard(data) {
-		const card = $.create('div', 'flat-cards__card'),
-			cardImage = $.create('img', 'flat-cards__image', data.image),
-			title = $.create('h3', 'flat-cards__title'),
-			subtitle = $.create('p', 'flat-cards__info'),
-			form = $.create('form', 'flat-cards__form js-form',
+		const card = dom.create('div', 'flat-cards__card'),
+			cardImage = dom.create('img', 'flat-cards__image', data.image),
+			title = dom.create('h3', 'flat-cards__title'),
+			subtitle = dom.create('p', 'flat-cards__info'),
+			form = dom.create('form', 'flat-cards__form js-form',
 				{
 					'data-id': 'popupResult',
 					'action': 'success.php'
 				}),
-			label = $.create('label'),
-			input = $.create('input', 'flat-cards__get-number', 
+			label = dom.create('label'),
+			hiddenInput = dom.create('input', '', {
+				'type': 'text',
+				'name': 'id-form',
+				'hidden': true,
+				'value': data.title
+			}),
+			input = dom.create('input', 'flat-cards__get-number', 
 				{
 					'type': 'text',
-					'name': 'name',
+					'name': 'tel',
 					'placeholder': 'Введите номер',
 					'required': true
 				}),
-			button = $.create('button', 'flat-cards__button btn', {'data-submit': ''});
+			button = dom.create('button', 'flat-cards__button btn', {'data-submit': ''});
 
 		title.innerText = data.title;
 		subtitle.innerHTML = data.subtitle;
 		button.innerText = 'Узнать подробнее';
 
 		label.append(input);
-		form.append(label);
-		card.append(cardImage, title, subtitle, form, button);
+		form.append(label, button, hiddenInput);
+		card.append(cardImage, title, subtitle, form);
 
 		return card;
 	}
 
 	changeCardsHandler() {
-		const buttons = $.getAll('.flats-preview__item'),
-			buttonsContainer = $.get('.flats-preview__list');
+		const buttons = dom.getAll('.flats-preview__item'),
+			buttonsContainer = dom.get('.flats-preview__list');
 
 		buttonsContainer.addEventListener('click', e => {
 			const {target} = e,
@@ -640,199 +524,377 @@ class RoomOptions {
 			this.renderCards();
 		});
 	}
+
+	showLagePhoto() {
+		const photo = dom.get('.flat-cards__image'),
+			blockClassName = 'options__large-image-wrapper';
+
+
+		window.addEventListener('click', (e) => {
+			const {target} = e;
+			if (target.className !== photo.className) {
+				if (dom.get(`.${blockClassName}`))
+					dom.get(`.${blockClassName}`).remove();
+				return;
+			};
+			if (dom.get(`.${blockClassName}`))
+					dom.get(`.${blockClassName}`).remove();
+			const imageData = {
+				src: target.src,
+				alt: target.alt
+			};
+			document.body.append(this.renderModalWindowPhoto(imageData, blockClassName));
+		});
+	}
+
+	renderModalWindowPhoto(data, className) {
+
+		const block = dom.create('div', className),
+			image = dom.create('img', 'layout-options__large-image', data);
+
+		block.append(image);
+		return block;
+	}
 }
 
-const roomCardsContainer = $.get('.flats-preview__flat-cards');
+const roomCardsContainer = dom.get('.flats-preview__flat-cards');
 
 const roomCards = new RoomOptions(roomCardsContainer, flatsData);
 
 // end options script
 
+function isValideNumber(data) {
+	const rule = '^([\+]+)*[0-9\x20\x28\x29\-]{5,20}$';
+	return !!(data.match(rule));
+}
+
 // start Quiz
 
-class Quiz {
-	constructor(container, data) {
-		this.props = {
-			form: {...data.form},
-			questions: [...data.questions],
-			container: container,
-			result: [],
-			currentAnswer: '',
-			currentQuestionId: 0
+class QuizRender {
+	constructor() {}
+
+	renderAnswer(data) { // data must be a string
+		const label = dom.create('label', 'quiz__label'),
+			span = dom.create('span', 'quiz__span'),
+			input = dom.create('input', 'quiz__input', 
+				{
+					'type': 'radio',
+					'name': 'quiz-answer',
+					'data-value': data
+				});
+
+		span.innerText = data;
+		label.append(input, span);
+		return label;
+	}
+
+	renderAnswers(data) { // data must be an array
+		if (dom.get('.quiz__answers-list')){  // if there is
+			const div = dom.get('.quiz__answers-list');
+			div.innerText = '';
+			data.forEach(text => {
+				div.append(this.renderAnswer(text));
+			});
+		}
+		else { // else create
+			const div = dom.create('div', 'quiz__answers-list');
+			data.forEach(text => {
+				div.append(this.renderAnswer(text));
+			});
+			return div;
 		}
 	}
 
-	startQuiz(startButton) {
-		startButton.addEventListener('click', () => {
-			this.renderQuiz();
-		});
+	renderQuestion(data) { // data must be a sting
+		if (dom.get('.quiz__question'))
+			dom.get('.quiz__question').innerText = data;
+		else {
+			const h3 = dom.create('h3', 'quiz__question');
+			h3.innerText = data;
+			return h3;
+		}
 	}
 
-	formateResult() {
-		const {result} = this.props;
-		let formated = '';
+	renderButtons() {
+		const buttonsComponent = dom.create('div', 'quiz__buttons-wrapper'),
+			leftButton = dom.create('button', 'quiz__buttons btn quiz__buttons_left'),
+			rightButton = dom.create('button', 'quiz__buttons btn quiz__buttons_right');
+		leftButton.innerText = 'Назад';
+		rightButton.innerText = 'Далее';
 
-		result.forEach(str => {
-			for (let data in str) {
-				formated += `${data} ${str[data]} <br>`;
-			}
-		});
-		return formated;
+		buttonsComponent.append(leftButton, rightButton);
+		return buttonsComponent;
 	}
 
-	renderQuiz() {
-		const {questions, container, currentQuestionId: id} = this.props,
-			currentQuestionCard = questions[id],
-			{answers} = currentQuestionCard;
-
-		const title = $.create('h3', 'quiz__question'),
-			answersWrapper = $.create('div', 'quiz__answers'),
-			buttons = $.create('div', 'quiz__buttons'),
-			nextButton = $.create('button', 'quiz__button quiz__buttom_next btn'),
-			prevButton = $.create('button', 'quiz__button quiz__buttom_prev btn'),
-			questionNumber = $.create('span', 'quiz__question-number');
-
-		answers.forEach(answer => {
-			answersWrapper.append(this.renderAnswer(answer));
-		});
-
-		questionNumber.innerText = id + 1;
-
-		title.innerText = currentQuestionCard.question;
-		nextButton.innerText = 'Далее';
-		prevButton.innerText = 'Назад';
-
+	renderQuiz(data, container) {
 		container.innerText = '';
-		buttons.append(prevButton, nextButton)
-		container.append(title, answersWrapper, buttons, questionNumber);
+		const {question, answers} = data,
+		currentQuestion = this.renderQuestion(question),
+			answersList = this.renderAnswers(answers),
+			buttons = this.renderButtons();
 
-		this.setCheckedByDefault();
-		this.quizHandler();
+		container.append(currentQuestion, answersList, buttons);
 	}
 
-	setCheckedByDefault() {
-		$.get('.quiz__answer-input').setAttribute('checked', true);
+	// form
+
+	renderQuizForm(data) { // string
+		const form = dom.create('form', 'quiz-form', {
+				method: 'POST',
+				action: 'test.php'
+			});
+
+		const formTitle = dom.create('p', 'quiz-form__subtitle'),
+			formInput = this.renderFormInput(),
+			buttons = this.renderFormButtons();
+
+		formTitle.innerText = data;
+		form.append(formTitle, formInput, buttons);		
+		return form;
 	}
 
-	renderAnswer(data) {
-		const input = $.create('input', 'quiz__answer-input', {
-			'type': 'radio',
-			'value': data,
-			'name': 'quiz-answer'
-		}),
-		wrapper = $.create('label', 'quiz__answer');
+	renderFormInput() { // string
+		const label = dom.create('label', 'quiz-form__label'),
+			input = dom.create('input', 'quiz-form__input', {
+				type: 'tel',
+				name: 'quiz-form-number',
+				// required: ''
+				placeholder: 'Введите свой телефон'
+			});
+		label.append(input);
+		return label;
+	}
 
-		wrapper.innerText = data;
-		wrapper.append(input);
+	renderFormButtons() {
+		const wrapper = dom.create('div', 'quiz-form__buttons-wrapper'),
+			prevButton = dom.create('button', 'quiz__buttons quiz-form__prev-button  btn'),
+			submit = dom.create('input', 'quiz__buttons btn quiz-form__submit-button', {
+				type: 'submit',
+				value: 'Отправить'
+			});
+
+		prevButton.innerText = 'Назад';
+		wrapper.append(prevButton, submit);
 		return wrapper;
 	}
 
-	quizHandler() {
-		const {questions, result} = this.props,
-			nextButton = $.get('.quiz__buttom_next'),
-			prevButton = $.get('.quiz__buttom_prev'),
-			currentQuestion = $.get('.quiz__question').innerText;
+	renderQuizThanks(container) {
 
-		this.checkAnswerHandler();
+		container.innerText = '';
 
-		prevButton.addEventListener('click', () => {
-			this.props.currentQuestionId -= 1;
-			if (this.props.currentQuestionId < 0)
-				this.props.currentQuestionId = 0;
-			this.renderQuiz();
-			result.splice(result.length - 1, 1);
-			console.log(this.props.result);
-		});
+		const title = dom.create('h3', 'quiz-thanks__title'),
+			text = dom.create('p', 'quiz-thanks__text');
 
-		nextButton.addEventListener('click', () => {
-			this.props.currentQuestionId += 1;
-			if (this.props.currentQuestionId > questions.length - 1) {
-				this.renderForm();
-				result.push({[currentQuestion]: this.props.currentAnswer});
-				return;
-			}
-			this.renderQuiz();
-			result.push({[currentQuestion]: this.props.currentAnswer});
-			console.log(this.props.result);
-		});
+		title.innerText = 'Спасибо, что прошли тест!';
+		text.innerText = 'Мы уже начали работу и на менеджер свяжется с вами в ближайшее время';
 
+		container.append(title, text);
 	}
 
-	checkAnswerHandler() {
+	// number
+	renderNumber(data) {
+		if (dom.get('.quiz__number'))
+			dom.get('.quiz__number').innerText = data;
+		else {
+			const number = dom.create('span', 'quiz__number');
+			number.innerText = data;
+			return number;
+		}
+	}
+}
 
-		const answers = $.getAll('.quiz__answer-input');
+class QuizHandler extends QuizRender{
+	constructor(container){
+		super();
 
-		for (let answer of answers) {
-			answer.addEventListener('change', e => {
-				const {value} = e.target;
-				this.props.currentAnswer = value;
+		this.data = {
+			questions: [],
+			form: {},
+			currentData: {},
+			allData: []
+		}
+
+		this.props = {
+			container: container,
+			questionId: 0
+		}
+	}
+
+	startHandler(button) {
+		button.addEventListener('click', () => {
+			this.startQuiz();
+		});
+	}
+
+	setQuestions(data){
+		this.data.questions = [...data];
+	}
+
+	setForm(data){
+		this.data.form = {...data};
+	}
+
+	startQuiz() {
+		const {container, questionId} = this.props,
+			{questions} = this.data;
+
+		super.renderQuiz(questions[questionId], container);
+
+		this.dataHandler();
+		this.changeQuestionsHandler();
+		container.append(super.renderNumber(questionId + 1));
+	}
+
+	dataHandler() {
+		const radioButtons = dom.getAll('.quiz__input'),
+			question = dom.get('.quiz__question');
+
+		for (let button of radioButtons) {
+			button.addEventListener('change', (e) => {
+				const {value} = e.target.dataset;
+				this.data.currentData = {
+					question: question.textContent,
+					answer: value
+				};
 			});
 		}
 	}
 
-	renderForm() {
-		const {form, container} = this.props,
-			title = $.get('.quiz__question'),
-			body = $.get('.quiz__answers'),
-			button = $.get('.quiz__buttom_next');
+	changeQuestionsHandler() {
+		const leftButton = dom.get('.quiz__buttons_left'),
+			rightButton = dom.get('.quiz__buttons_right');
 
-		title.innerText = form.title;
-		button.innerText = 'Отправить';
-		body.innerText = '';
+		rightButton.addEventListener('click', ()=> {
+			this.props.questionId++;
+			if (this.props.questionId > this.data.questions.length - 1) {
+				this.data.allData.push(this.data.currentData);
+				this.createQuizForm();
+			}
+			else 
+				this.nextButtonHandler();
+		});
+		leftButton.addEventListener('click', ()=> {
+			this.props.questionId--;
+			(this.props.questionId < 0) ? 
+				(
+					this.props.questionId = 0,
+					this.data.allData.splice(0, 1)
+				) : 
+				this.prevButtonHandler();
+		});
+	}
 
-		const subtitle = $.create('p', 'quiz__form--form__subtitle'),
-			formToSend = $.create('form', 'quiz__form--form js-form', {
-				mhetod: 'POST',
-				action: 'success.php',
-				'data-id': 'popupResult'
-			}),
-			label = $.create('label', 'quiz__form--form__label'),
-			input = $.create('input', 'quiz__form--form__input', {
-				type: 'text',
-				name: 'quiz-form-number',
-				placeholder: 'Введите свой телефон'
-			}),
-			hiddenLabel = $.create('label', 'quiz__form--form__label_hidden'),
-			hiddenInput = $.create('input', 'quiz__form--form__input_hidden', {
-				type: 'text',
-				name: 'quiz-form-number_hidden'
-			});
+	nextButtonHandler() {
+		const {questionId} = this.props,
+			{questions, allData} = this.data,
+			currentQuizQuestion = questions[questionId];
+		
+		super.renderQuestion(currentQuizQuestion.question);
+		super.renderAnswers(currentQuizQuestion.answers);
+		super.renderNumber(questionId + 1);
 
-		$.setStyle(title, {
-			marginBottom: '16px'
+		allData.push(this.data.currentData);
+		this.dataHandler();
+	}
+
+	prevButtonHandler() {
+		const {questionId} = this.props,
+			{questions, allData} = this.data,
+			currentQuestion = questions[questionId];
+		
+		super.renderQuestion(currentQuestion.question);
+		super.renderAnswers(currentQuestion.answers);
+		super.renderNumber(questionId + 1);
+
+		allData.splice(allData.length - 1, 1);
+		this.dataHandler();
+	}
+
+	createQuizForm() {
+		const {form, questions} = this.data,
+			{container} = this.props;
+			
+		container.innerText = '';
+
+		container.append(super.renderQuestion(form.title))
+		container.append(super.renderQuizForm(form.subtitle));
+		container.append(super.renderNumber(this.props.questionId + 1));
+
+		const submitButton = dom.get('.quiz-form__submit-button'),
+			prevButton = dom.get('.quiz-form__prev-button'),
+			input = dom.get('.quiz-form__input');
+
+		prevButton.addEventListener('click', () => {
+			this.props.questionId = 0;
+			this.data.allData.splice(0, this.data.allData.length);
+			this.startQuiz();
 		});
 
-		container.insertBefore(subtitle, body);
-		subtitle.innerText = form.subtitle;
-		hiddenInput.value = this.formateResult();
-		hiddenLabel.append(hiddenInput);
-		label.append(input);
-		formToSend.append(label, hiddenLabel);
-		body.append(formToSend);
+		submitButton.addEventListener('click', (e) => {
 
-		const quizNumber = $.get('.quiz__question-number');
-		quizNumber.innerText = +quizNumber.innerText + 1;
-		
-		setTimeout(() => {
-			this.renderThanks();
-		}, 500)
-		
+			if (!isValideNumber(input.value)) {
+				e.preventDefault();
+				this.errorMessage(input);
+			}
+			else {
+				this.sendQuizForm();
+			}
+		});
 	}
 
-	renderThanks() {
-		const {container} = this.props,
-			title = $.create('h3', 'quiz__thanks--thanks__title'),
-			subtitle = $.create('p', 'quiz__thanks--thanks__subtitle'),
-			button = $.get('.quiz__buttom_next');
+	errorMessage(el) {
 
-		(button && button.addEventListener('click', () => {
-			title.innerText = 'Спасибо, что прошли тест!'
-			subtitle.innerText = 'Мы уже начали работу и наш менеджер свяжется с вами в ближайшее время';
-			container.innerText = '';
-			container.append(title, subtitle);
-		}));	
+		const parentEl = el.parentNode;
+
+		if (parentEl.contains(dom.get('.quiz__error-message'))) return;
+
+		const message = dom.create('span', 'quiz__error-message');
+		message.innerText = 'Поле обязательно для заполнения';
+		parentEl.insertBefore(message, el.nextSibling);
+
+		setTimeout(() => {
+			if (dom.get('.quiz__error-message'))
+				dom.get('.quiz__error-message').remove();
+		}, 3000);
+	}
+
+	sendQuizForm() {
+		const {container} = this.props;
+		const form = dom.get('.quiz-form'),
+			input = dom.get('.quiz-form__input').value,
+			answersData = JSON.stringify(this.data.allData);
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+		});
+
+		const request = new XMLHttpRequest();
+
+		request.addEventListener('load', () => {
+			console.log(request.response);
+		});
+
+		const url = 'quiz-form-number=' + encodeURIComponent(input) + '&quiz-form-hidden-data=' + encodeURIComponent(answersData);
+
+		request.open('POST', 'test.php', true);
+		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+		request.send(url);
+
+		setTimeout(() => {
+			super.renderQuizThanks(container);
+		}, 100);
 	}
 }
+
+// const excursionQuizContainer = dom.get('.excursion__test'),
+// 	excursionQuiz = new QuizHandler(excursionQuizContainer),
+// 	excursionButtonToStart = dom.get('.start-esxursion-test')
+
+
+
+// excursionQuiz.setQuestions(excursionQuizData.questions);
+// excursionQuiz.setForm(excursionQuizData.form);
+// excursionQuiz.startHandler(excursionButtonToStart);
 
 // end Quiz
 
@@ -932,9 +994,15 @@ const manageQuizData = {
 	}
 }
 
-const manageQuizContainer = $.get('.manage__test'),
-	manageQuiz = new Quiz(manageQuizContainer, manageQuizData);
-manageQuiz.startQuiz($.get('.start-manage-quiz'));
+const manageQuizContainer = dom.get('.manage__test'),
+	manageQuiz = new QuizHandler(manageQuizContainer),
+	manageButtonToStart = dom.get('.start-manage-quiz');
+
+
+
+manageQuiz.setQuestions(manageQuizData.questions);
+manageQuiz.setForm(manageQuizData.form);
+manageQuiz.startHandler(manageButtonToStart);
 
 // end manage quiz
 
@@ -1002,9 +1070,15 @@ const excursionQuizData =
 	}
 };
 
-const excursionQuizContainer = $.get('.excursion__test'),
-	excursionQuiz = new Quiz(excursionQuizContainer, excursionQuizData);
-excursionQuiz.startQuiz($.get('.start-esxursion-test'));
+const excursionQuizContainer = dom.get('.excursion__test'),
+	excursionQuiz = new QuizHandler(excursionQuizContainer),
+	excursionButtonToStart = dom.get('.start-esxursion-test')
+
+
+
+excursionQuiz.setQuestions(excursionQuizData.questions);
+excursionQuiz.setForm(excursionQuizData.form);
+excursionQuiz.startHandler(excursionButtonToStart);
 
 // end excursion quiz
 
@@ -1042,19 +1116,75 @@ class ModalWindow {
 					this.props.container.style.display = 'flex';
 			}
 			else if (!target.closest(`.${className[0]}`)) {
-				this.props.container.style.display = 'none';
-				if (target === this.props.target)
+				if (!this.props.className) {
 					this.props.container.style.display = 'none';
+					if (target === this.props.target)
+						this.props.container.style.display = 'none';
+				}
 			}
 		}
 	}
 }
 
 const headerForm = new ModalWindow();
-headerForm.setProps($.get('.header__form'), $.get('.header__btn'));
+headerForm.setProps(dom.get('.header__form'), dom.get('.header__callback'));
 
 const conditionsForm = new ModalWindow();
-conditionsForm.setProps($.get('.conditions__form'), $.get('.conditions__btn'));
+conditionsForm.setProps(dom.get('.conditions__form'), dom.get('.conditions__btn'));
+
+const getDemoForm = new ModalWindow();
+getDemoForm.setProps(dom.get('.get-demo__form'), dom.get('.get-demo__button'));
 
 const mobileMenu = new ModalWindow();
-mobileMenu.setProps($.get('.menu'), $.get('.mobile-menu'), {className: 'menu__open'});
+mobileMenu.setProps(dom.get('.menu'), dom.get('.mobile-menu'), {className: 'menu__open'});
+
+
+// little window
+
+const offerWindowData = [
+	`Пользователь из Дубровки только что забронировал квартиру`,
+	`Пользователь из Низино только что забронировал квартиру`,
+	`Пользователь из Санкт-Петербурга только что забронировал квартиру`,
+	`Пользователь из Санкт-Петербурга только что записался на просмотр квартиры`
+
+];
+
+function randomInteger(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+ }
+
+function offerWindow(data, id) { // data = array
+	const offer = dom.create('div', 'offer-window'),
+		message = dom.create('div', 'offer-window__message'),
+		image = dom.create('div', 'offer-window__image'),
+		cancelButton = dom.create('div', 'offer-window__cancel-button');
+
+	cancelButton.innerText = '×';
+	message.innerText = data[id];
+
+	offer.append(image, message, cancelButton);
+
+	cancelButton.addEventListener('click', ()=> {
+		offer.remove();
+	});
+
+	return offer;
+}
+
+window.onload = function() {
+	
+	setTimeout(() => {
+		const randomRange = randomInteger(0, offerWindowData.length - 1);
+		document.body.append(offerWindow(offerWindowData, randomRange));
+	}, 30000);
+ 
+	
+	setInterval(() => {
+		if (!dom.get('.offer-window')) {
+			const randomRange = randomInteger(0, offerWindowData.length - 1);
+			document.body.append(offerWindow(offerWindowData, randomRange));
+		}
+	}, 300000);
+};

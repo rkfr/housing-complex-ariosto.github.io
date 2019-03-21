@@ -1,52 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Aristo</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Aristo" />
+	<meta name="description" content="Ariosto - жилой комплекс в Приморском районе">
+	<meta name="keywords" content="Ariosto, жилой комплекс Ariosto, жилой комплекс Питер, недвижимость в Приморском районе">
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="img/favicon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="img/favicon/favicon-192.png">
+	<!-- OG Tags -->
+	<meta property="og:title" content="Ariosto">
+	<meta property="og:description" content="Ariosto - жилой комплекс в Приморском районе">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="#" >
+	<meta property="og:site_name" content="Ariosto">
+	<!-- Chrome, Firefox OS and Opera -->
+ 	<meta name="theme-color" content="#f2f2f5">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#f2f2f5">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#f2f2f5">
 	<!-- css -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<!-- script -->
-	<script src="js/index.js" defer></script>
+	<script src="js/index.min.js" defer></script>
 </head>
 <body>
 	<!--start header -->
 	<header class="header" id="header">
 		<div class="container">
-			<nav class="nav d-flex">
-				<a href="#" class="header__logo"></a>
-				<div class="menu d-flex">
-					<a href="#" class="menu__item">
-						Главная
-					</a>
-					<a href="#" class="menu__item">
-						Расположение
-					</a>
-					<a href="#" class="menu__item">
-						Планировки и цены
-					</a>
-					<a href="#" class="menu__item">
-						Акции и виды оплаты
-					</a>
-				</div>
-				<div class="header__links d-flex">
-					<a href="#" class="header__callback">
-						Заказать звонок
-					</a>
-					<div class="header__phones d-flex">
-						<a href="tel:+78123036651" class="header__phone">
-							+7 (812) 303 66 51
+			<nav class="nav">
+				<div class="container d-flex">
+					<a href="/" class="header__logo" aria-label="company logo"></a>
+					<div class="menu d-flex">
+						<a href="/" class="menu__item">
+							Главная
 						</a>
-						<p class="header__works">
-							Cейчас работаем
-						</p>
+						<a href="#map" class="menu__item goto">
+							Расположение
+						</a>
+						<a href="#layout-option" class="menu__item goto">
+							Планировки и цены
+						</a>
+						<a href="#conditions" class="menu__item goto">
+							Акции и виды оплаты
+						</a>
 					</div>
+					<div class="header__links d-flex">
+						<a class="header__callback">
+							Заказать звонок
+						</a>
+						<div class="header__phones d-flex">
+							<a href="tel:+78123036651" class="header__phone">
+								+7 (812) 303 66 51
+							</a>
+							<p class="header__works">
+								Cейчас работаем
+							</p>
+						</div>
+					</div>
+					<a class="mobile-menu"></a>
 				</div>
-				<a class="mobile-menu"></a>
 			</nav>
 			<div class="header__offer">
 				<h1 class="header__title">
@@ -55,7 +72,7 @@
 				<p class="header__text">
 					Ariosto! - жилой комплекс в Приморском районе
 				</p>
-				<a href="#" class="header__btn btn">
+				<a href="#manage" class="header__btn btn goto">
 					Заказать просмотр
 				</a>
 			</div>
@@ -63,13 +80,14 @@
 				<h5 class="header__form-title">
 					Заполните форму
 				</h5>
+				<input name="id-form" type="text" value=" Заказ обратного звонка" hidden>
 				<label class="header__form-label">
 					<input type="text" class="header__form-input" placeholder="Введите имя" name="name">
 				</label>
 				<label class="header__form-label">
 					<input type="tel" class="header__form-input header__form-input_get-number" placeholder="Введите телефон" name="tel">
 				</label>
-				<button class="header__form-btn btn">
+				<button class="header__form-btn btn" data-submit>
 					Заказать звонок
 				</button>
 				<span class="header__form-secure">
@@ -86,34 +104,35 @@
 			<h2 class="gallery__title">Галерея “Ariosto”</h2>
 			<p class="gallery__description">Погрузитесь в мир Вашего будущего дома!</p>
 		</div>
-		<button class="gallery__button gallery__button_left"></button>
+		<button class="gallery__button gallery__button_left" aria-label="galler left button"></button>
 		<div class="gallery__photos"></div>
-		<button class="gallery__button gallery__button_right"></button>
+		<button class="gallery__button gallery__button_right" aria-label="galler right button"></button>
 	</section>
 	<!-- end gallery -->
 
 	<!-- start manage -->
-	<section class="manage">
+	<section class="manage" id="manage">
 		<div class="container manage__container">
 			<div class="manage__to-get d-flex">
 				<div class="manage__offer">
 					<h2 class="manage__title">Успей получить</h2>
 					<p class="manage__text">Специальное предложение на квартиру мечты!</p>
 					<div class="manage__timer d-flex">
-						<span class="timer__unit">22</span>
-						<span class="timer__unit">03</span>
-						<span class="timer__unit">40</span>
-						<span class="timer__unit">59</span>
+						<span class="timer__unit">00</span>
+						<span class="timer__unit">00</span>
+						<span class="timer__unit">00</span>
+						<span class="timer__unit">00</span>
 					</div>
 				</div>
 				<div class="manage__form">
 					<h4 class="manage__form-title">Записаться на просмотр</h4>
 					<form action="success.php" class="small-form d-flex js-form" data-id="popupResult">
+						<input name="id-form" type="text" value=" Записаться на просмотр" hidden>
 						<label class="form__label">
 							<input class="small-form__input small-form__input_name" type="text" name="name" placeholder="Введите имя" required>
 						</label>
 						<label class="form__label">
-							<input class="small-form__input small-form__input_tel" type="text" name="tel" placeholder="Введите номер" required>
+							<input class="small-form__input small-form__input_tel" type="tel" name="tel" placeholder="Введите номер" required>
 						</label>
 						<button class="btn small-form__btn" data-submit>
 							Жду звонка
@@ -306,13 +325,14 @@
 				<h5 class="conditions__form-title">
 					Заполните форму
 				</h5>
+				<input name="id-form" type="text" value=" Условия покупки и акции" hidden>
 				<label class="conditions__form-label">
 					<input type="text" class="conditions__form-input" placeholder="Введите имя" name="name">
 				</label>
 				<label class="conditions__form-label">
 					<input type="tel" class="conditions__form-input conditions__form-input_get-number" placeholder="Введите телефон" name="tel">
 				</label>
-				<button class="conditions__form-btn btn">
+				<button class="conditions__form-btn btn" data-submit>
 					Заказать звонок
 				</button>
 				<span class="conditions__form-secure">
@@ -334,33 +354,42 @@
 				<button class="get-demo__button btn">Скачать буклет</button>
 			</div>
 		</div>
+		<form class="get-demo__form js-form" action="success.php" data-id="goToNewPage">
+				<h5 class="header__form-title">
+					Заполните форму
+				</h5>
+				<input name="id-form" type="text" value=" Заказ обратного звонка" hidden>
+				<label class="header__form-label">
+					<input type="text" class="header__form-input" placeholder="Введите имя" name="name">
+				</label>
+				<label class="header__form-label">
+					<input type="tel" class="header__form-input header__form-input_get-number" placeholder="Введите телефон" name="tel">
+				</label>
+				<button class="get-demo__form-btn btn" data-submit>
+					Скачать буклет
+				</button>
+				<span class="header__form-secure">
+					Ваши данные защищены
+				</span>
+			</form>
 	</section>
 	<!-- get-demo end -->
 
 	<!-- layout-option start -->
-	<section class="layout-option">
+	<section class="layout-option" id="layout-option">
 		<div class="container layout-options__container">
 			<h2 class="layout-option__title">Варианты планировок</h2>
 			<p class="layout-option__subtitle">Гармония внешнего и внутреннего пространства!</p>
 			<div class="layout-option__flats-preview">
 				<ul class="flats-preview__list d-flex">
+					<li class="flats-preview__item flats-preview__checked" data-flat-id="2">
+						Студия
+					</li>
 					<li class="flats-preview__item" data-flat-id="0">
 						1-комнатная
 					</li>
 					<li class="flats-preview__item" data-flat-id="1">
 						2-комнатная
-					</li>
-					<li class="flats-preview__item" data-flat-id="2">
-						Евро 2-комнатная
-					</li>
-					<li class="flats-preview__item flats-preview__checked" data-flat-id="3">
-						3-комнатная
-					</li>
-					<li class="flats-preview__item" data-flat-id="4">
-						Евро 3-комнатная
-					</li>
-					<li class="flats-preview__item" data-flat-id="5">
-						Студия
 					</li>
 				</ul>
 				<div class="flats-preview__flat-cards d-flex">
@@ -387,6 +416,7 @@
 				<div class="excursion__form">
 					<h4 class="excursion__form-title">Записаться на просмотр</h4>
 					<form action="success.php" class="small-form d-flex js-form" data-id="popupResult">
+						<input name="id-form" type="text" value=" Запишитесь на бесплатную экскурсию" hidden>
 						<label class="form__label">
 							<input class="small-form__input small-form__input_name" type="text" name="name" placeholder="Введите имя" required>
 						</label>
@@ -441,13 +471,14 @@
 					<h2 class="flats-form__title">
 						Хотите посмотреть?
 					</h2>
+					<input name="id-form" type="text" value=" Дизайн квартир" hidden>
 					<label class="flats-form__label">
 						<input type="text" class="flats-form__input" placeholder="Введите имя" name="name">
 					</label>
 					<label class="flats-form__label">
-						<input type="text" class="flats-form__input flats-form__input_get-number" placeholder="Введите телефон" name="number">
+						<input type="tel" class="flats-form__input flats-form__input_get-number" placeholder="Введите телефон" name="tel">
 					</label>
-					<button class="flats-form__button btn">
+					<button class="flats-form__button btn" data-submit>
 						Записаться на просмотр
 					</button>
 					<span class="flats-form__secure-info">
@@ -458,7 +489,6 @@
 		</div>
 	</section>
 	<!-- flats design end -->
-
 	<!-- mortage start -->
 	<section class="mortage" id="mortage">
 		<div class="container">
@@ -468,11 +498,11 @@
 					Наш менеджер свяжется с вами в течении 15 минут
 				</p>
 				<div class="mortage__form">
-					<h4 class="mortage__form-title">Зафиксировать цену</h4>
+					<h4 class="mortage__form-title">Получить расчет</h4>
 					<form action="success.php" class="small-form d-flex js-form" data-id="popupResult">
-						<input name="id-form" type="text" value=" Вызов мастера для расчёта стоимости" hidden>
+						<input name="id-form" type="text" value=" Оставьте заявку на расчет программы рассрочки или ипотеки" hidden>
 						<label class="form__label">
-							<input class="small-form__input small-form__input_tel" type="text" name="tel" placeholder="Введите номер" required>
+							<input class="small-form__input small-form__input_tel" type="tel" name="tel" placeholder="Введите номер" required>
 						</label>
 						<button class="btn mortage__btn" data-submit>
 							Рассчитать вариант
@@ -512,7 +542,7 @@
 	<footer class="footer" id="footer">
 		<div class="container">
 			<div class="footer__wrap d-flex">
-				<a href="#" class="footer__logo"></a>
+				<a href="/" class="footer__logo" aria-label="company logo"></a>
 				<p class="footer__text">
 					Информация взята из открытых источников, не является публичной офертой и распространяется для ознакомления
 				</p>
@@ -523,5 +553,21 @@
 		</div>
 	</footer>
 	<!-- footer end -->
+
+    <div id="loader">
+        <img alt="Loader" src="img/ripple.svg">
+    </div>
+    
+
+    <div id="overlay">
+        <div id="thx">
+            Спасибо! Ваша заявка принята.
+        </div>
+    </div>
+	<!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+    <script src="js/forms-configs.js"></script>
 </body>
 </html>
